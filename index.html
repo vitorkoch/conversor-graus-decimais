@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Graus Decimais</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <header>
+            <h1>Conversor Graus Decimais</h1>
+        </header>
+        <section>
+            <div id="esquerda">
+                <p></p>
+                    Longitude(y):<br><br>
+                    <select name="longitude" id="longitude" class="campo" onchange="deletar('placeholderY')">
+                        <option id="placeholderY">Escolha o hemisfério</option>
+                        <option value="n">Norte</option>
+                        <option value="s">Sul</option>
+                    </select><br><br>
+
+                    Graus:
+                    <input
+                        type="number"
+                        name="grausX"
+                        id="grausX"
+                        class="campo"
+                        min="0"
+                        max="180"
+                    />
+                </p>
+                <p>
+                    Minutos:
+                    <input
+                        type="number"
+                        name="minutosX"
+                        id="minutosX"
+                        class="campo"
+                        min="0"
+                        max="60"
+                    />
+                </p>
+                <p>
+                    Segundos:
+                    <input
+                        type="number"
+                        name="segundosX"
+                        id="segundosX"
+                        class="campo"
+                        min="0"
+                        max="60"
+                    />
+                </p>
+            </div>
+            <div id="direita">
+                <p>
+                    <p></p>
+                    Latitude(x):<br><br>
+                    <select name="longitude" id="longitude" class="campo" onchange="deletar('placeholderX')">
+                        <option id="placeholderX">Escolha o meridiano</option>
+                        <option value="n">Leste</option>
+                        <option value="s">Oeste</option>
+                    </select><br><br>
+
+                    Graus:
+                    <input
+                        type="number"
+                        name="grausY"
+                        id="grausY"
+                        class="campo"
+                        min="0"
+                        max="180"
+                    />
+                </p>
+                <p>
+                    Minutos:
+                    <input
+                        type="number"
+                        name="minutosY"
+                        id="minutosY"
+                        class="campo"
+                        min="0"
+                        max="60"
+                    />
+                </p>
+                <p>
+                    Segundos:
+                    <input
+                        type="number"
+                        name="segundosY"
+                        id="segundosY"
+                        class="campo"
+                        min="0"
+                        max="60"
+                    />
+                </p>
+            </div>
+            <div class="centro">
+                <input type="button" value="Converter" class="campo" onclick="converter()">
+            </div>
+            <div id="res"></div>
+        </section>
+        <footer>
+            <p>&copy; vitorkoch</p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
