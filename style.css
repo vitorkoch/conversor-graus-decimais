@@ -1,6 +1,6 @@
 body {
     background: rgb(18, 129, 219);
-    font: normal 15pt Cascadia Code;
+    font: normal 15pt Fira Code;
 }
 
 header {
@@ -27,14 +27,14 @@ div {
 footer {
     color: white;
     text-align: center;
-    font: italic 15px Cascadia Code;
+    font: italic 15px Fira Code;
 }
 
 .campo {
     background-color: lightgray;
     border-radius: 6px;
     box-shadow: 2px 2px 3px rgb(66, 66, 66);
-    font: normal 12pt Cascadia Code;
+    font: normal 12pt Fira Code;
 }
 
 .centro {
