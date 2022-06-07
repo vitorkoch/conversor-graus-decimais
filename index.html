@@ -14,44 +14,12 @@
             <h1>Conversor Graus Decimais</h1>
         </header>
         <section>
-            <div id="direita">
-                <p>Latitude(x):</p>
-                <p>
-                    Graus:
-                    <input
-                        type="number"
-                        name="grausX"
-                        id="grausX"
-                        class="campo"
-                        min="0"
-                        max="180"
-                    />
-                </p>
-                <p>
-                    Minutos:
-                    <input
-                        type="number"
-                        name="minutosX"
-                        id="minutosX"
-                        class="campo"
-                        min="0"
-                        max="60"
-                    />
-                </p>
-                <p>
-                    Segundos:
-                    <input
-                        type="number"
-                        name="segundosX"
-                        id="segundosX"
-                        class="campo"
-                        min="0"
-                        max="60"
-                    />
-                </p>
-            </div>
             <div id="esquerda">
                 <p>Longitude(y):</p>
+                <input type="radio" name="longitude" id="l" checked />
+                <label for="l">Leste</label>
+                <input type="radio" name="longitude" id="o" />
+                <label for="o">Oeste</label>
                 <p>
                     Graus:
                     <input
@@ -80,6 +48,46 @@
                         type="number"
                         name="segundosY"
                         id="segundosY"
+                        class="campo"
+                        min="0"
+                        max="60"
+                    />
+                </p>
+            </div>
+            <div id="direita">
+                <p>Latitude(x):</p>
+                <input type="radio" name="latitude" id="n" checked />
+                <label for="n">Norte</label>
+                <input type="radio" name="latitude" id="s" />
+                <label for="s">Sul</label>
+                <p>
+                    Graus:
+                    <input
+                        type="number"
+                        name="grausX"
+                        id="grausX"
+                        class="campo"
+                        min="0"
+                        max="180"
+                    />
+                </p>
+                <p>
+                    Minutos:
+                    <input
+                        type="number"
+                        name="minutosX"
+                        id="minutosX"
+                        class="campo"
+                        min="0"
+                        max="60"
+                    />
+                </p>
+                <p>
+                    Segundos:
+                    <input
+                        type="number"
+                        name="segundosX"
+                        id="segundosX"
                         class="campo"
                         min="0"
                         max="60"

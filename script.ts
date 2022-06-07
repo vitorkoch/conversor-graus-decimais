@@ -5,8 +5,8 @@ const campoMinutosY = document.getElementById('minutosY');
 const campoSegundosX = document.getElementById('segundosX');
 const campoSegundosY = document.getElementById('segundosY');
 const res = document.getElementById('res');
-const selecaoHemisferio = document.getElementById('longitude');
-const selecaoMeridiano = document.getElementById('latitude');
+const longitude = document.getElementsByName('longitude');
+const latitude = document.getElementsByName('latitude');
 
 function valor(campo) {
     return Number(campo instanceof HTMLInputElement ? campo.value : '');
@@ -19,19 +19,18 @@ function validar(campo) {
 
 function converter() {
     res.innerHTML = '';
-    
-    /*
-    if (meridiano) {
-        const sinalX = '+';
-    } else if (meridiano) {
-        const sinalX = '-';
+
+    if (longitude[0] instanceof HTMLInputElement ? longitude[0].checked : '') {
+        var sinalY = '+';
+    } else {
+        var sinalY = '-';
     }
 
-    if (hemisferio) {
-        const sinalY = '+';
-    } else if (hemisferio) {
-        const sinalY = '-';
-    }*/
+    if (latitude[0] instanceof HTMLInputElement ? latitude[0].checked : '') {
+        var sinalX = '+';
+    } else {
+        var sinalX = '-';
+    }
 
     if (
         validar(campoGrausX) &&
@@ -48,11 +47,11 @@ function converter() {
         const minutosX = valor(campoMinutosX);
         const segundosX = valor(campoSegundosX);
 
-        res.innerHTML = `y:${(
+        res.innerHTML = `y:${sinalY + (
             grausY +
             minutosY / 60 +
             segundosY / 3600
-        ).toPrecision(5)}<br>x:${(
+        ).toPrecision(5)}<br>x:${sinalX + (
             grausX +
             minutosX / 60 +
             segundosX / 3600
@@ -61,4 +60,3 @@ function converter() {
         alert('Valores inválidos! Tente novamente');
     }
 }
-
