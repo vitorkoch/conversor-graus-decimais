@@ -14,15 +14,9 @@
             <h1>Conversor Graus Decimais</h1>
         </header>
         <section>
-            <div id="esquerda">
-                <p></p>
-                    Longitude(y):<br><br>
-                    <select name="longitude" id="longitude" class="campo" onchange="deletar('placeholderY')">
-                        <option id="placeholderY">Escolha o hemisfério</option>
-                        <option value="n">Norte</option>
-                        <option value="s">Sul</option>
-                    </select><br><br>
-
+            <div id="direita">
+                <p>Latitude(x):</p>
+                <p>
                     Graus:
                     <input
                         type="number"
@@ -56,16 +50,9 @@
                     />
                 </p>
             </div>
-            <div id="direita">
+            <div id="esquerda">
+                <p>Longitude(y):</p>
                 <p>
-                    <p></p>
-                    Latitude(x):<br><br>
-                    <select name="longitude" id="longitude" class="campo" onchange="deletar('placeholderX')">
-                        <option id="placeholderX">Escolha o meridiano</option>
-                        <option value="n">Leste</option>
-                        <option value="s">Oeste</option>
-                    </select><br><br>
-
                     Graus:
                     <input
                         type="number"
@@ -100,13 +87,17 @@
                 </p>
             </div>
             <div class="centro">
-                <input type="button" value="Converter" class="campo" onclick="converter()">
+                <input
+                    type="button"
+                    value="Converter"
+                    class="campo"
+                    onclick="converter()"
+                />
+                <p id="res"></p>
             </div>
-            <div id="res"></div>
         </section>
         <footer>
             <p>&copy; vitorkoch</p>
         </footer>
-        
     </body>
 </html>
