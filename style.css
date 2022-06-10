@@ -1,6 +1,6 @@
 body {
     background: rgb(18, 129, 219);
-    font: normal 15pt Fira Code, sans-serif;
+    font: normal 15pt JetBrains Mono, sans-serif;
 }
 
 header {
@@ -27,14 +27,14 @@ div {
 footer {
     color: white;
     text-align: center;
-    font: italic 15px Fira Code, sans-serif;
+    font: italic 15px JetBrains Mono, sans-serif;
 }
 
 .campo {
     background-color: lightgray;
     border-radius: 6px;
     box-shadow: 2px 2px 3px rgb(66, 66, 66);
-    font: normal 12pt Fira Code, sans-serif;
+    font: normal 12pt JetBrains Mono, sans-serif;
 }
 
 .centro {
