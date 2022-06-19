@@ -1,19 +1,19 @@
-const campoGrausX = document.getElementById('grausX');
-const campoGrausY = document.getElementById('grausY');
-const campoMinutosX = document.getElementById('minutosX');
-const campoMinutosY = document.getElementById('minutosY');
-const campoSegundosX = document.getElementById('segundosX');
-const campoSegundosY = document.getElementById('segundosY');
+const fieldGrausX = document.getElementById('grausX');
+const fieldGrausY = document.getElementById('grausY');
+const fieldMinutosX = document.getElementById('minutosX');
+const fieldMinutosY = document.getElementById('minutosY');
+const fieldSegundosX = document.getElementById('segundosX');
+const fieldSegundosY = document.getElementById('segundosY');
 const res = document.getElementById('res');
 const longitude = document.getElementsByName('longitude');
 const latitude = document.getElementsByName('latitude');
 
-function valor(campo) {
-    return Number(campo instanceof HTMLInputElement ? campo.value : '');
+function valor(field) {
+    return Number(field instanceof HTMLInputElement ? field.value : '');
 }
 
-function validar(campo) {
-    if (valor(campo) >= 0) return true;
+function validar(field) {
+    if (valor(field) >= 0) return true;
     else return false;
 }
 
@@ -33,29 +33,25 @@ function converter() {
     }
 
     if (
-        validar(campoGrausX) &&
-        validar(campoGrausY) &&
-        validar(campoMinutosX) &&
-        validar(campoMinutosY) &&
-        validar(campoSegundosX) &&
-        validar(campoSegundosY)
+        validar(fieldGrausX) &&
+        validar(fieldGrausY) &&
+        validar(fieldMinutosX) &&
+        validar(fieldMinutosY) &&
+        validar(fieldSegundosX) &&
+        validar(fieldSegundosY)
     ) {
-        const grausY = valor(campoGrausY);
-        const minutosY = valor(campoMinutosY);
-        const segundosY = valor(campoSegundosY);
-        const grausX = valor(campoGrausX);
-        const minutosX = valor(campoMinutosX);
-        const segundosX = valor(campoSegundosX);
+        const grausY = valor(fieldGrausY);
+        const minutosY = valor(fieldMinutosY);
+        const segundosY = valor(fieldSegundosY);
+        const grausX = valor(fieldGrausX);
+        const minutosX = valor(fieldMinutosX);
+        const segundosX = valor(fieldSegundosX);
 
-        res.innerHTML = `y:${sinalY + (
-            grausY +
-            minutosY / 60 +
-            segundosY / 3600
-        ).toPrecision(5)}<br>x:${sinalX + (
-            grausX +
-            minutosX / 60 +
-            segundosX / 3600
-        ).toPrecision(5)}`;
+        res.innerHTML = `y: ${
+            sinalY + (grausY + minutosY / 60 + segundosY / 3600).toPrecision(5)
+        }<br>x: ${
+            sinalX + (grausX + minutosX / 60 + segundosX / 3600).toPrecision(5)
+        }`;
     } else {
         alert('Valores inválidos! Tente novamente');
     }

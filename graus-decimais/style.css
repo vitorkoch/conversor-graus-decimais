@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Cascadia Code';
+    src: url('fonts/CascadiaCode-Regular.woff2') format('woff2'),
+        url('fonts/CascadiaCode-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 body {
     background: rgb(18, 129, 219);
     font: normal 15pt Cascadia Code, sans-serif;
@@ -30,7 +39,7 @@ footer {
     font: italic 15px Cascadia Code, sans-serif;
 }
 
-.campo {
+.field {
     background-color: lightgray;
     border-radius: 6px;
     box-shadow: 2px 2px 3px rgb(66, 66, 66);
@@ -41,13 +50,13 @@ footer {
     margin: 37%;
 }
 
-#esquerda {
+#left {
     float: left;
     display: inline;
     text-align: center;
 }
 
-#direita {
+#right {
     float: right;
     text-align: center;
 }

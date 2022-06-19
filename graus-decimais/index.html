@@ -14,7 +14,7 @@
             <h1>Conversor Graus Decimais</h1>
         </header>
         <section>
-            <div id="esquerda">
+            <div id="left">
                 <p>Longitude(y):</p>
                 <input type="radio" name="longitude" id="l" checked />
                 <label for="l">Leste</label>
@@ -26,7 +26,7 @@
                         type="number"
                         name="grausY"
                         id="grausY"
-                        class="campo"
+                        class="field"
                         min="0"
                         max="180"
                     />
@@ -37,7 +37,7 @@
                         type="number"
                         name="minutosY"
                         id="minutosY"
-                        class="campo"
+                        class="field"
                         min="0"
                         max="60"
                     />
@@ -48,13 +48,13 @@
                         type="number"
                         name="segundosY"
                         id="segundosY"
-                        class="campo"
+                        class="field"
                         min="0"
                         max="60"
                     />
                 </p>
             </div>
-            <div id="direita">
+            <div id="right">
                 <p>Latitude(x):</p>
                 <input type="radio" name="latitude" id="n" checked />
                 <label for="n">Norte</label>
@@ -66,7 +66,7 @@
                         type="number"
                         name="grausX"
                         id="grausX"
-                        class="campo"
+                        class="field"
                         min="0"
                         max="180"
                     />
@@ -77,7 +77,7 @@
                         type="number"
                         name="minutosX"
                         id="minutosX"
-                        class="campo"
+                        class="field"
                         min="0"
                         max="60"
                     />
@@ -88,7 +88,7 @@
                         type="number"
                         name="segundosX"
                         id="segundosX"
-                        class="campo"
+                        class="field"
                         min="0"
                         max="60"
                     />
@@ -98,7 +98,7 @@
                 <input
                     type="button"
                     value="Converter"
-                    class="campo"
+                    class="field"
                     onclick="converter()"
                 />
                 <p id="res"></p>
