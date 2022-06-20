@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'Cascadia Code';
+    src: url('fonts/CascadiaCode-Regular.woff2') format('woff2'),
+        url('fonts/CascadiaCode-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background: rgb(18, 129, 219);
+    font: normal 15pt Cascadia Code, sans-serif;
+    text-align: center;
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font: italic 15px Cascadia Code, sans-serif;
+}
