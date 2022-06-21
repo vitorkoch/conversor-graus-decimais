@@ -1,15 +1,27 @@
 @font-face {
     font-family: 'Cascadia Code';
-    src: url('fonts/CascadiaCode-Regular.woff2') format('woff2'),
-        url('fonts/CascadiaCode-Regular.woff') format('woff');
+    src: url('/fonts/CascadiaCode-Regular.woff2') format('woff2'),
+        url('/fonts/CascadiaCode-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
+* {
+    font-family: 'Cascadia Code';
+    margin: 10;
+    padding: 5;
+    box-sizing: border-box;
+    border: none;
+}
+
 body {
-    background: rgb(18, 129, 219);
-    font: normal 15pt Cascadia Code, sans-serif;
+    min-height: 100vh;
+    background-image: linear-gradient(
+        0deg,
+        rgb(49, 107, 134),
+        rgb(49, 134, 106)
+    );
 }
 
 header {
@@ -18,13 +30,14 @@ header {
 }
 
 section {
-    background: white;
+    background: rgba(255, 255, 255, 0.61);
     border-radius: 8px;
     padding: 15px;
     width: 500px;
     height: 350px;
     margin: auto;
     box-shadow: 5px 5px 10px rgb(66, 66, 66);
+    font-size: 1.15rem;
 }
 
 div {
@@ -36,18 +49,18 @@ div {
 footer {
     color: white;
     text-align: center;
-    font: italic 15px Cascadia Code, sans-serif;
+    font-style: italic;
 }
 
 .field {
     background-color: lightgray;
     border-radius: 6px;
     box-shadow: 2px 2px 3px rgb(66, 66, 66);
-    font: normal 12pt Cascadia Code, sans-serif;
+    font-size: 1rem;
 }
 
 .center {
-    margin: 37%;
+    margin: 40%;
 }
 
 #left {
@@ -59,4 +72,12 @@ footer {
 #right {
     float: right;
     text-align: center;
+}
+
+#botao {
+    cursor: pointer;
+}
+
+#l, #o, #n, #s {
+    cursor: pointer;
 }
