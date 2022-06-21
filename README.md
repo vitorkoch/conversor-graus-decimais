@@ -1,6 +1,8 @@
-# Conversor Graus decimais
+# Meus sites
 
-Site para converter graus-minutos-segundos para graus decimais
+Alguns side-projects meus
 
+[Página do Repositório]()
 ---
-[Link do Site](https://vitorkoch.github.io/conversor-graus-decimais/)
+
+[Conversor Graus Decimais]()
