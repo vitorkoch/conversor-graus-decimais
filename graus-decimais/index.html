@@ -1,53 +1,53 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Graus Decimais</title>
+        <title>Decimal Degrees</title>
         <link rel="stylesheet" href="style.css" />
         <script src="script.js" defer></script>
     </head>
 
     <body>
         <header>
-            <h1>Conversor Graus Decimais</h1>
+            <h1>Decimal Degrees Converter</h1>
         </header>
         <section>
             <div id="left">
                 <p>Longitude(y):</p>
-                <input type="radio" name="longitude" id="l" checked />
-                <label for="l">Leste</label>
-                <input type="radio" name="longitude" id="o" />
-                <label for="o">Oeste</label>
+                <input type="radio" name="longitude" id="e" checked />
+                <label for="e">East</label>
+                <input type="radio" name="longitude" id="w" />
+                <label for="w">Weast</label>
                 <p>
-                    Graus:
+                    Degrees:
                     <input
                         type="number"
-                        name="grausY"
-                        id="grausY"
+                        name="degreesY"
+                        id="degreesY"
                         class="field"
                         min="0"
                         max="180"
                     />
                 </p>
                 <p>
-                    Minutos:
+                    Minutes:
                     <input
                         type="number"
-                        name="minutosY"
-                        id="minutosY"
+                        name="minutesY"
+                        id="minutesY"
                         class="field"
                         min="0"
                         max="60"
                     />
                 </p>
                 <p>
-                    Segundos:
+                    Seconds:
                     <input
                         type="number"
-                        name="segundosY"
-                        id="segundosY"
+                        name="secondsY"
+                        id="secondsY"
                         class="field"
                         min="0"
                         max="60"
@@ -57,37 +57,37 @@
             <div id="right">
                 <p>Latitude(x):</p>
                 <input type="radio" name="latitude" id="n" checked />
-                <label for="n">Norte</label>
+                <label for="n">North</label>
                 <input type="radio" name="latitude" id="s" />
-                <label for="s">Sul</label>
+                <label for="s">South</label>
                 <p>
-                    Graus:
+                    Degrees:
                     <input
                         type="number"
-                        name="grausX"
-                        id="grausX"
+                        name="degreesX"
+                        id="degreesX"
                         class="field"
                         min="0"
                         max="180"
                     />
                 </p>
                 <p>
-                    Minutos:
+                    Minutes:
                     <input
                         type="number"
-                        name="minutosX"
-                        id="minutosX"
+                        name="minutesX"
+                        id="minutesX"
                         class="field"
                         min="0"
                         max="60"
                     />
                 </p>
                 <p>
-                    Segundos:
+                    Seconds:
                     <input
                         type="number"
-                        name="segundosX"
-                        id="segundosX"
+                        name="secondsX"
+                        id="secondsX"
                         class="field"
                         min="0"
                         max="60"

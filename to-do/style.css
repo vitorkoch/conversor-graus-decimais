@@ -22,6 +22,8 @@ body {
         rgb(49, 107, 134),
         rgb(49, 134, 106)
     );
+}
+
 header {
     font-size: 1.5rem;
 }
@@ -51,9 +53,14 @@ button {
     color: white;
     background-color:rgba(0, 0, 0, 0);
     cursor: pointer;
-    transition: 0.3s;
 }
 
 button:hover {
-    color: gray;
+    color: rgb(146, 146, 146);
+    transition: 0.3s;
+}
+
+footer {
+    text-align: center;
+    font-style: italic;
 }
