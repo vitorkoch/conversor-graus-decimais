@@ -2,7 +2,7 @@
 
 Alguns side-projects meus
 
-[Página do Repositório](https://vitorkoch.github.io/meus-sites/)
+[Página do Repositório](https://vitorkoch.github.io/my-sites/)
 ---
 
-[Conversor Graus Decimais](https://vitorkoch.github.io/meus-sites/decimal-degrees)
+[Conversor Graus Decimais](https://vitorkoch.github.io/my-sites/decimal-degrees)
