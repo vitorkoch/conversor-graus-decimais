@@ -74,11 +74,11 @@ footer {
     text-align: center;
 }
 
-#botao {
+#button {
     cursor: pointer;
 }
 
-#botao:hover {
+#button:hover {
     background-color: rgb(173, 173, 173);
     transition: 0.3s;
 }

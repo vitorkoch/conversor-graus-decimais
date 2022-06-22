@@ -29,7 +29,7 @@ header {
 }
 
 header,
-form {
+#form {
     min-height: 15vh;
     display: flex;
     justify-content: center;
@@ -56,11 +56,45 @@ button {
 }
 
 button:hover {
-    color: rgb(146, 146, 146);
+    color: rgb(189, 189, 189);
     transition: 0.3s;
 }
 
 footer {
     text-align: center;
     font-style: italic;
+}
+
+#todo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#todo-list {
+    min-width: 30%;
+    list-style: none;
+}
+
+.todo {
+    background: rgba(255, 255, 255, 0.3);
+    margin: 0.5rem;
+    color: black;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0.6rem;
+}
+
+.todo li{
+    flex: 1;
+    padding: 1rem;
+}
+
+.complete-btn {
+    color: green;
+}
+
+.trash-btn {
+    color: red;
 }

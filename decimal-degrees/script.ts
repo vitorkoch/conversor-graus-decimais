@@ -8,7 +8,7 @@ const res = document.getElementById('res');
 const longitude = document.getElementsByName('longitude');
 const latitude = document.getElementsByName('latitude');
 
-document.getElementById('botao').addEventListener('click', converter);
+document.getElementById('button').addEventListener('click', convert);
 
 function valor(field) {
     return Number(field instanceof HTMLInputElement ? field.value : '');
@@ -17,7 +17,7 @@ function validate(field) {
     if (valor(field) >= 0) return true;
     else return false;
 }
-function converter() {
+function convert() {
     res.innerHTML = '';
     if (longitude[0] instanceof HTMLInputElement ? longitude[0].checked : '') {
         var sinalY = '+';

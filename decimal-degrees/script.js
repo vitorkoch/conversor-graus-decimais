@@ -7,7 +7,7 @@ const fieldsecondsY = document.getElementById('secondsY');
 const res = document.getElementById('res');
 const longitude = document.getElementsByName('longitude');
 const latitude = document.getElementsByName('latitude');
-document.getElementById('botao').addEventListener('click', converter);
+document.getElementById('button').addEventListener('click', converter);
 function valor(field) {
     return Number(field instanceof HTMLInputElement ? field.value : '');
 }
