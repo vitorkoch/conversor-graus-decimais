@@ -1,14 +1,14 @@
 @font-face {
-    font-family: "Cascadia Code";
-    src: url("/fonts/CascadiaCode-Regular.woff2") format("woff2"),
-        url("/fonts/CascadiaCode-Regular.woff") format("woff");
+    font-family: 'Cascadia Code';
+    src: url('/fonts/CascadiaCode-Regular.woff2') format('woff2'),
+        url('/fonts/CascadiaCode-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 * {
-    font-family: "Cascadia Code";
+    font-family: 'Cascadia Code';
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -51,18 +51,19 @@ button {
     font-size: 1.8rem;
     padding: 0;
     color: white;
-    background-color:rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
     cursor: pointer;
+    transition: 0.3s;
 }
 
 button:hover {
     color: rgb(189, 189, 189);
-    transition: 0.3s;
 }
 
 footer {
     text-align: center;
     font-style: italic;
+    padding-top: 2rem;
 }
 
 #todo-container {
@@ -86,15 +87,22 @@ footer {
     border-radius: 0.6rem;
 }
 
-.todo li{
+.todo li {
     flex: 1;
     padding: 1rem;
 }
 
 .complete-btn {
-    color: green;
+    color: rgba(0, 255, 0, 0.7);
 }
 
+.complete-btn:hover {
+    color: rgba(0, 255, 0);
+}
 .trash-btn {
-    color: red;
+    color: rgba(255, 0, 0, 0.7);
+}
+
+.trash-btn:hover {
+    color: rgba(255, 0, 0);
 }
