@@ -1,14 +1,7 @@
-@font-face {
-    font-family: Cascadia Code;
-    src: url('/fonts/CascadiaCode-Regular.woff2') format('woff2'),
-        url('/fonts/CascadiaCode-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 
 * {
-    font-family: Cascadia Code, sans-serif;
+    font-family: JetBrains Mono, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -42,7 +35,6 @@ button {
     opacity: 0.8;
     border-radius: 0.6rem;
     padding: 0.3rem;
-    font-family: Cascadia Code;
     font-size: 1rem;
 }
 
