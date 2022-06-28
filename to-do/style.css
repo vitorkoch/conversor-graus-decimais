@@ -4,7 +4,6 @@
     font-family: JetBrains Mono, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     border: none;
 }
 
@@ -65,7 +64,7 @@ footer {
 }
 
 #todo-list {
-    min-width: 30%;
+    min-width: 25%;
     list-style: none;
 }
 
@@ -97,4 +96,13 @@ footer {
 
 .trash-btn:hover {
     color: rgba(255, 0, 0);
+}
+
+.fa-trash, .fa-check {
+    pointer-events: none;
+}
+
+.completed {
+    opacity: 0.5;
+    text-decoration: line-through;
 }

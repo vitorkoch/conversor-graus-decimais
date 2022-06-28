@@ -2,7 +2,7 @@ const input = document.querySelector('#todo-input');
 const addButton = document.querySelector('#todo-button');
 const list = document.querySelector('#todo-list');
 addButton.addEventListener('click', addTodo);
-input.addEventListener('', addTodo);
+list.addEventListener('click', deleteCheck);
 function addTodo() {
     let inputValue = input instanceof HTMLInputElement ? input.value : '';
     if (inputValue != '') {
@@ -25,4 +25,17 @@ function addTodo() {
     }
     input instanceof HTMLInputElement ? (input.value = '') : '';
     input instanceof HTMLElement ? input.focus() : '';
+}
+function deleteCheck(event) {
+    const item = event.target;
+    if (item.classList[0] === 'trash-btn') {
+        console.log('Trash button clicked');
+        const todo = item.parentElement;
+        todo.remove();
+    }
+    else if (item.classList[0] === 'complete-btn') {
+        console.log('Complete button clicked');
+        const todo = item.parentElement;
+        todo.classList.toggle('completed');
+    }
 }
