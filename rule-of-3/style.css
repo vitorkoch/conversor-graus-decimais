@@ -52,3 +52,8 @@ button:hover {
 #inputArea {
     text-align: center;
 }
+
+:disabled {
+    background-color: rgba(255, 255, 255, .6);
+    color: black;
+}
