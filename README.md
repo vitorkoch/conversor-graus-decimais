@@ -6,4 +6,5 @@ Alguns side-projects meus
 ---
 
 -  [Conversor Graus Decimais](https://vitorkoch.github.io/my-sites/decimal-degrees/)  
--  [To-Do](https://vitorkoch.github.io/my-sites/to-do/)
+-  [To-Do](https://vitorkoch.github.io/my-sites/to-do/)  
+-  [Regra de 3](https://vitorkoch.github.io/my-sites/rule-of-3/)
