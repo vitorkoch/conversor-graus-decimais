@@ -18,11 +18,9 @@ header {
 body {
     min-height: 100vh;
     color: white;
-    background-image: linear-gradient(
-        0deg,
-        rgb(49, 107, 134),
-        rgb(49, 134, 106)
-    );
+    background-color: #16833a;
+    background-image: linear-gradient(315deg, #16833a, #0183a7);
+    text-align: center;
 }
 
 footer {
@@ -31,12 +29,13 @@ footer {
     padding-top: 2rem;
 }
 
-input, button {
-    margin: .3rem;
+input,
+button {
+    margin: 0.3rem;
     text-align: center;
-    border-radius: .3rem;
-    padding: .2rem;
-    font-size: .9rem;
+    border-radius: 0.3rem;
+    padding: 0.2rem;
+    font-size: 0.9rem;
 }
 
 button {
