@@ -22,7 +22,7 @@ header {
 
 header,
 #form {
-    min-height: 15vh;
+    min-height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,7 +52,7 @@ button:hover {
 footer {
     text-align: center;
     font-style: italic;
-    padding-top: 2rem;
+    margin-top: 2rem;
 }
 
 #todo-container {
