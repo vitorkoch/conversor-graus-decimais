@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+* {
+    font-family: JetBrains Mono, sans-serif;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+header {
+    font-size: 1.5rem;
+    min-height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    min-height: 100vh;
+    color: white;
+    background-image: linear-gradient(
+        0deg,
+        rgb(49, 107, 134),
+        rgb(49, 134, 106)
+    );
+}
+
+footer {
+    text-align: center;
+    font-style: italic;
+    padding-top: 2rem;
+}
+
+input, button {
+    margin: .3rem;
+    text-align: center;
+    border-radius: .3rem;
+    padding: .2rem;
+    font-size: .9rem;
+}
+
+button {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+button:hover {
+    opacity: 1;
+    transition: 250ms;
+}
+
+#inputArea {
+    text-align: center;
+}
