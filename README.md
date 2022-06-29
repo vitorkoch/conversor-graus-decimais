@@ -5,5 +5,5 @@ Alguns side-projects meus
 
 ---
 
--  [To-Do](https://vitorkoch.github.io/my-sites/to-do/)  
--  [Regra de 3](https://vitorkoch.github.io/my-sites/rule-of-3/)
+1. [To-Do](https://vitorkoch.github.io/my-sites/to-do/)
+2. [Regra de 3](https://vitorkoch.github.io/my-sites/rule-of-3/)
