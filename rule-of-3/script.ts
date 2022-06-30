@@ -1,3 +1,4 @@
+// Selectors
 const n1 = document.getElementById('n1');
 const n2 = document.getElementById('n3');
 const n3 = document.getElementById('n2');
@@ -10,6 +11,7 @@ n2.addEventListener('change', submit)
 n3.addEventListener('change', submit)
 btn.addEventListener('click', clearInput)
 
+// Functions
 function value(n) {
     return n instanceof HTMLInputElement ? n.value : ''
 }

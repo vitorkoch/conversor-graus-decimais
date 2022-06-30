@@ -6,17 +6,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Rule of 3</title>
         <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
         <script src="./script.js" defer></script>
     </head>
     <body>
         <header>Rule of 3</header>
         <div id="inputArea">
-            <input type="number" name="n1" id="n1"/> ->
-            <input type="number" name="n2" id="n2"/><br />
-            <input type="number" name="n3" id="n3"/> ->
+            <input type="number" name="n1" id="n1" /> =>
+            <input type="number" name="n2" id="n2" /><br />
+            <input type="number" name="n3" id="n3" /> =>
             <input type="number" name="x" id="x" disabled /><br />
         </div>
-        <button type="button" id="clear-btn">Clear</button>
+        <button type="button" id="clear-btn">
+            <i class="fa-solid fa-trash-can"></i>
+        </button>
         <footer>&copy; vitorkoch</footer>
     </body>
 </html>
