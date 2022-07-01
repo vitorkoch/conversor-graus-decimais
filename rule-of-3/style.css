@@ -38,7 +38,9 @@ button {
     font-size: 0.9rem;
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
 }
-
+input {
+    width: 15vw;
+}
 button {
     cursor: pointer;
     opacity: 0.5;
@@ -65,8 +67,8 @@ a:visited {
     cursor: pointer;
 }
 
-a:link:active,
-a:visited:active {
+a:link:hover,
+a:visited:hover {
     color: rgb(0, 0, 0);
     transition: 250ms;
 }

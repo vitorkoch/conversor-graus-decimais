@@ -118,8 +118,8 @@ a:visited {
     cursor: pointer;
 }
 
-a:link:active,
-a:visited:active {
+a:link:hover,
+a:visited:hover {
     color: rgb(0, 0, 0);
     transition: 250ms;
 }
