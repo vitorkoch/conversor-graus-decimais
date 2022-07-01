@@ -38,9 +38,11 @@ button {
     font-size: 0.9rem;
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
 }
+
 input {
-    width: 15vw;
+    max-width: 35vw;
 }
+
 button {
     cursor: pointer;
     opacity: 0.5;
