@@ -110,3 +110,16 @@ input,
 .todo {
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
 }
+
+a:link,
+a:visited {
+    color: rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:link:active,
+a:visited:active {
+    color: rgb(0, 0, 0);
+    transition: 250ms;
+}
