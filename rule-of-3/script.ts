@@ -6,9 +6,9 @@ const x = document.getElementById('x');
 const btn = document.getElementById('clear-btn')
 
 // Event Listeners
-n1.addEventListener('change', submit)
-n2.addEventListener('change', submit)
-n3.addEventListener('change', submit)
+n1.addEventListener('input', submit)
+n2.addEventListener('input', submit)
+n3.addEventListener('input', submit)
 btn.addEventListener('click', clearInput)
 
 // Functions

@@ -3,9 +3,9 @@ const n2 = document.getElementById('n3');
 const n3 = document.getElementById('n2');
 const x = document.getElementById('x');
 const btn = document.getElementById('clear-btn');
-n1.addEventListener('change', submit);
-n2.addEventListener('change', submit);
-n3.addEventListener('change', submit);
+n1.addEventListener('input', submit);
+n2.addEventListener('input', submit);
+n3.addEventListener('input', submit);
 btn.addEventListener('click', clearInput);
 function value(n) {
     return n instanceof HTMLInputElement ? n.value : '';
