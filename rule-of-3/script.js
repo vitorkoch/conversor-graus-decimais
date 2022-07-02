@@ -1,8 +1,8 @@
-const n1 = document.getElementById('n1');
-const n2 = document.getElementById('n3');
-const n3 = document.getElementById('n2');
-const x = document.getElementById('x');
-const btn = document.getElementById('clear-btn');
+const n1 = document.querySelector('[n1]');
+const n2 = document.querySelector('[n2]');
+const n3 = document.querySelector('[n3]');
+const x = document.querySelector('[x]');
+const btn = document.querySelector('[clear-btn]');
 n1.addEventListener('input', submit);
 n2.addEventListener('input', submit);
 n3.addEventListener('input', submit);

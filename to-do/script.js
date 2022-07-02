@@ -1,6 +1,6 @@
-const input = document.querySelector('#todo-input');
-const addButton = document.querySelector('#todo-button');
-const list = document.querySelector('#todo-list');
+const input = document.querySelector('[todo-input]');
+const addButton = document.querySelector('[todo-btn]');
+const list = document.querySelector('[todo-list]');
 addButton.addEventListener('click', addTodo);
 list.addEventListener('click', deleteCheck);
 function addTodo() {

@@ -1,7 +1,7 @@
 // Selectors
-const input = document.querySelector('#todo-input');
-const addButton = document.querySelector('#todo-button');
-const list = document.querySelector('#todo-list');
+const input = document.querySelector('[todo-input]');
+const addButton = document.querySelector('[todo-btn]');
+const list = document.querySelector('[todo-list]');
 
 // Event Listeners
 addButton.addEventListener('click', addTodo);
