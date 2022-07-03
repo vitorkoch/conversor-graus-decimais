@@ -4,6 +4,8 @@ const numbers = document.querySelectorAll('[number]')
 const operations = document.querySelectorAll('[operation]')
 const equals = document.querySelector('[equal]')
 const ac = document.querySelector('[allClear]')
+const previousEle = document.querySelector('[previous-operand]')
+const currentEle = document.querySelector('[current-operand]')
 
 // Event Listeners
 

@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Rule of 3</title>
+        <title>To-Do</title>
         <link rel="stylesheet" href="./style.css" />
         <link
             rel="stylesheet"
@@ -16,21 +16,26 @@
         <script src="./script.js" defer></script>
     </head>
     <body>
-        <a href="../index.html"><i class="fa-solid fa-house"></i></a>
+        <a href=".../index.html"><i class="fa-solid fa-house"></i></a>
         <header>
-            <h2>Rule of 3</h2>
+            <h2>To-Do</h2>
         </header>
-        <div id="inputArea">
-            <input type="number" name="n1" id="n1" n1/>
-            <i class="fa-solid fa-arrow-right-long"></i>
-            <input type="number" name="n2" id="n2" n2/><br />
-            <input type="number" name="n3" id="n3" n3/>
-            <i class="fa-solid fa-arrow-right-long"></i>
-            <input type="number" name="x" id="x" disabled x/><br />
+        <div id="form">
+            <input
+                type="text"
+                name="todo-input"
+                todo-input
+                placeholder="Insert a new To-Do"
+            />
+            <button todo-btn type="button">
+                <i class="fas fa-plus-square"></i>
+            </button>
         </div>
-        <button type="button" id="clear-btn" clear-btn>
-            <i class="fa-solid fa-trash-can"></i>
-        </button>
-        <footer>&copy; vitorkoch</footer>
+        <div id="todo-container">
+            <ul id="todo-list" todo-list></ul>
+        </div>
+        <footer>
+            <p>&copy; vitorkoch</p>
+        </footer>
     </body>
 </html>
