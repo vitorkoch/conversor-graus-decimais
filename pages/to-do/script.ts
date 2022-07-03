@@ -1,4 +1,4 @@
-// Selectors
+// Variables
 const input = document.querySelector('[todo-input]');
 const addButton = document.querySelector('[todo-btn]');
 const list = document.querySelector('[todo-list]');
@@ -46,7 +46,7 @@ function deleteCheck(event) {
         console.log('Trash button clicked');
         const todo = item.parentElement;
         todo.remove();
-    } 
+    }
     // Complete todo
     else if (item.classList[0] === 'complete-btn') {
         console.log('Complete button clicked');
