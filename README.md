@@ -1,11 +1,11 @@
 # My sites
 
 My sandbox for web development
-### [Homepage](https://vitorkoch.github.io/my-sites/)
+### [Homepage](https://my-sites-theta.vercel.app)
 
 ---
 
 | Project | Credits |
 | :---: | :---: |
-|[To-Do](https://vitorkoch.github.io/my-sites/to-do/index.html)|[Dev Ed](https://youtu.be/Ttf3CEsEwMQ)|
-|[Rule of 3](https://vitorkoch.github.io/my-sites/rule-of-3/index.html)|Myself|
+|[To-Do](https://my-sites-theta.vercel.app/to-do/index.html)|[Dev Ed](https://youtu.be/Ttf3CEsEwMQ)|
+|[Rule of 3](https://my-sites-theta.vercel.app/rule-of-3/index.html)|Myself|
