@@ -7,11 +7,12 @@ const equals = document.querySelector('[equal]');
 const ac = document.querySelector('[allClear]');
 const previousEle = document.querySelector('[previous-operand]');
 const currentEle = document.querySelector('[current-operand]');
+let sign = '';
 
 // Event Listeners
 del.addEventListener('click', delNum);
 equals.addEventListener('click', result);
-ac.addEventListener('click', clearNum);
+ac.addEventListener('click', clearNums);
 numbers[0].addEventListener('click', () => {
     addNum('1');
 });
@@ -46,7 +47,7 @@ numbers[10].addEventListener('click', () => {
     addNum('0');
 });
 operations[0].addEventListener('click', () => {
-    operation('÷');
+    operation('/');
 });
 operations[1].addEventListener('click', () => {
     operation('*');
@@ -57,27 +58,53 @@ operations[2].addEventListener('click', () => {
 operations[3].addEventListener('click', () => {
     operation('-');
 });
-
+del.addEventListener('click', delNum);
+equals.addEventListener('click', result);
 // Functions
 
 function addNum(num) {
+    console.log(`Number ${num} added`);
     currentEle instanceof HTMLElement ? (currentEle.innerText += num) : '';
 }
 
-function delNum() {}
-
-function clearNum() {
-    previousEle instanceof HTMLElement ? (previousEle.innerText = ' ') : '';
-    currentEle instanceof HTMLElement ? (currentEle.innerText = ' ') : '';
+function delNum() {
+    console.log('Number deleted');
+    currentEle instanceof HTMLElement
+        ? (currentEle.innerText = currentEle.innerText.slice(0, -1))
+        : '';
 }
 
-function result() {}
+function clearNums() {
+    console.log('All clear');
+    previousEle instanceof HTMLElement ? (previousEle.innerText = '') : '';
+    currentEle instanceof HTMLElement ? (currentEle.innerText = '') : '';
+}
 
-function operation(sign) {
+function result() {
+    let previousTxt =
+        previousEle instanceof HTMLElement ? previousEle.innerText : '';
+    let currentTxt =
+        currentEle instanceof HTMLElement ? currentEle.innerText : '';
+    const calculation = `${Number(
+        previousTxt.slice(0, -1)
+    )} ${sign} ${currentTxt}`;
+    if (sign != '') {
+        previousEle instanceof HTMLElement ? (previousEle.innerText = '') : '';
+        currentEle instanceof HTMLElement
+            ? (currentEle.innerText = eval(calculation))
+            : '';
+        console.log(calculation);
+        sign = ''
+    }
+}
+
+function operation(operation) {
+    sign = operation;
+    console.log(`The operation is ${sign}`);
     let currentTxt =
         currentEle instanceof HTMLElement ? currentEle.innerText : '';
     previousEle instanceof HTMLElement
-        ? (previousEle.innerText = currentTxt + sign)
+        ? (previousEle.innerText = `${currentTxt} ${sign}`)
         : '';
     currentEle instanceof HTMLElement ? (currentEle.innerText = '') : '';
 }
