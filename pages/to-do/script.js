@@ -26,8 +26,8 @@ function addTodo() {
     input instanceof HTMLInputElement ? (input.value = '') : '';
     input instanceof HTMLElement ? input.focus() : '';
 }
-function deleteCheck(event) {
-    const item = event.target;
+function deleteCheck(e) {
+    const item = e.target;
     if (item.classList[0] === 'trash-btn') {
         console.log('Trash button clicked');
         const todo = item.parentElement;

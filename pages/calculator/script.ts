@@ -1,4 +1,4 @@
-// Variables
+// Selectors
 const buttons = document.querySelectorAll('[type="button"]');
 const del = document.querySelector('[delete]');
 const numbers = document.querySelectorAll('[number]');
@@ -7,12 +7,14 @@ const equals = document.querySelector('[equal]');
 const ac = document.querySelector('[allClear]');
 const previousEle = document.querySelector('[previous-operand]');
 const currentEle = document.querySelector('[current-operand]');
+
+// Variables
 let sign = '';
 
 // Event Listeners
 del.addEventListener('click', delNum);
 equals.addEventListener('click', result);
-ac.addEventListener('click', clearNums);
+ac.addEventListener('click', allClear);
 numbers[0].addEventListener('click', () => {
     addNum('1');
 });
@@ -74,7 +76,7 @@ function delNum() {
         : '';
 }
 
-function clearNums() {
+function allClear() {
     console.log('All clear');
     previousEle instanceof HTMLElement ? (previousEle.innerText = '') : '';
     currentEle instanceof HTMLElement ? (currentEle.innerText = '') : '';
@@ -94,7 +96,7 @@ function result() {
             ? (currentEle.innerText = eval(calculation))
             : '';
         console.log(calculation);
-        sign = ''
+        sign = '';
     }
 }
 

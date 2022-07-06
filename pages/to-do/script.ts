@@ -1,4 +1,4 @@
-// Variables
+// Selectors
 const input = document.querySelector('[todo-input]');
 const addButton = document.querySelector('[todo-btn]');
 const list = document.querySelector('[todo-list]');
@@ -33,13 +33,12 @@ function addTodo() {
 
         list.appendChild(todoDiv);
     }
-
     input instanceof HTMLInputElement ? (input.value = '') : '';
     input instanceof HTMLElement ? input.focus() : '';
 }
 
-function deleteCheck(event) {
-    const item = event.target;
+function deleteCheck(e) {
+    const item = e.target;
 
     // Delete todo
     if (item.classList[0] === 'trash-btn') {

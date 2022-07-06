@@ -9,7 +9,7 @@ const currentEle = document.querySelector('[current-operand]');
 let sign = '';
 del.addEventListener('click', delNum);
 equals.addEventListener('click', result);
-ac.addEventListener('click', clearNums);
+ac.addEventListener('click', allClear);
 numbers[0].addEventListener('click', () => {
     addNum('1');
 });
@@ -67,7 +67,7 @@ function delNum() {
         ? (currentEle.innerText = currentEle.innerText.slice(0, -1))
         : '';
 }
-function clearNums() {
+function allClear() {
     console.log('All clear');
     previousEle instanceof HTMLElement ? (previousEle.innerText = '') : '';
     currentEle instanceof HTMLElement ? (currentEle.innerText = '') : '';
