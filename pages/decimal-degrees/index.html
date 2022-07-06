@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Decimal Degrees Converter</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <a href="/index.html"><i class="fa-solid fa-house"></i></a>
+        <header>Decimal Degrees Converter</header>
+        <div class="container">
+            <div class="latitude">
+                <h4>Latitude(y)</h4>
+                <!-- Latitude Radio -->
+                <div class="radio">
+                    <input type="radio" name="latitude" id="n" n checked />
+                    <label for="n">North</label><br />
+                    <input type="radio" name="latitude" id="s" s />
+                    <label for="s">South</label><br />
+                </div>
+
+                <!-- Latitude Input -->
+                <label for="degY">Degrees(yº)<br /></label>
+                <input type="number" name="degY" id="degY" degY /><br />
+                <label for="minY">Minutes(y')<br /></label>
+                <input type="number" name="minY" id="minY" minY /><br />
+                <label for="secY">Seconds(y")<br /></label>
+                <input type="number" name="secY" id="secY" secY />
+            </div>
+
+            <div class="longitude">
+                <h4>Longitude(x)</h4>
+                <!-- Longitude Radio -->
+                <div class="radio">
+                    <input type="radio" name="longitude" id="e" e checked />
+                    <label for="n">East</label><br />
+                    <input type="radio" name="longitude" id="w" w />
+                    <label for="w">West</label>
+                </div>
+
+                <!-- Longitude Input -->
+                <label for="degX">Degrees(xº)<br /></label>
+                <input type="number" name="degX" id="degX" degX /><br />
+                <label for="minX">Minutes(x')<br /></label>
+                <input type="number" name="minX" id="minX" minX /><br />
+                <label for="secX">Seconds(x")<br /></label>
+                <input type="number" name="secX" id="secX" secX />
+            </div>
+            <span resultY>y:</span><br />
+            <span resultX>x:</span><br />
+            <button type="button" id="clear-btn" clear-btn>
+                <i class="fa-solid fa-trash-can"></i>
+            </button>
+        </div>
+        <footer>&copy; vitorkoch</footer>
+    </body>
+</html>
