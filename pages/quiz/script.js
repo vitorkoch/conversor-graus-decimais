@@ -41,18 +41,20 @@ function start() {
     renderQue();
 }
 function check() {
+    disableRadio();
     if (answerA instanceof HTMLInputElement ? answerA.checked : '') {
         answerChecked = 'a';
     }
-    if (answerB instanceof HTMLInputElement ? answerB.checked : '') {
+    else if (answerB instanceof HTMLInputElement ? answerB.checked : '') {
         answerChecked = 'b';
     }
-    if (answerC instanceof HTMLInputElement ? answerC.checked : '') {
+    else if (answerC instanceof HTMLInputElement ? answerC.checked : '') {
         answerChecked = 'c';
     }
-    if (answerD instanceof HTMLInputElement ? answerD.checked : '') {
+    else if (answerD instanceof HTMLInputElement ? answerD.checked : '') {
         answerChecked = 'd';
     }
+    backgroundAdd();
     console.log(`Answer '${answerChecked}' checked`);
     let messageHTML = '';
     if (correct()) {
@@ -72,6 +74,8 @@ function check() {
         : '';
 }
 function newRound() {
+    backgroundRemove();
+    enableRadio();
     let finalMessage = '';
     currentRound++;
     console.log('New question');
@@ -131,6 +135,38 @@ function deselectAnswer() {
     answerB instanceof HTMLInputElement ? (answerB.checked = false) : '';
     answerC instanceof HTMLInputElement ? (answerC.checked = false) : '';
     answerD instanceof HTMLInputElement ? (answerD.checked = false) : '';
+}
+function disableRadio() {
+    answerA instanceof HTMLInputElement ? (answerA.disabled = true) : '';
+    answerB instanceof HTMLInputElement ? (answerB.disabled = true) : '';
+    answerC instanceof HTMLInputElement ? (answerC.disabled = true) : '';
+    answerD instanceof HTMLInputElement ? (answerD.disabled = true) : '';
+}
+function enableRadio() {
+    answerA instanceof HTMLInputElement ? (answerA.disabled = false) : '';
+    answerB instanceof HTMLInputElement ? (answerB.disabled = false) : '';
+    answerC instanceof HTMLInputElement ? (answerC.disabled = false) : '';
+    answerD instanceof HTMLInputElement ? (answerD.disabled = false) : '';
+}
+function backgroundAdd() {
+    if (questions[random].correct === 'a') {
+        textA.classList.add('correct');
+    }
+    if (questions[random].correct === 'b') {
+        textB.classList.add('correct');
+    }
+    if (questions[random].correct === 'c') {
+        textC.classList.add('correct');
+    }
+    if (questions[random].correct === 'd') {
+        textD.classList.add('correct');
+    }
+}
+function backgroundRemove() {
+    textA.classList.remove('correct');
+    textB.classList.remove('correct');
+    textC.classList.remove('correct');
+    textD.classList.remove('correct');
 }
 function generateRandomInteger() {
     random = Math.floor(Math.random() * totalRounds - 1) + 1;

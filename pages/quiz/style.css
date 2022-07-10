@@ -99,6 +99,12 @@ button:hover {
     background-color: rgba(255, 0, 0, 0.5);
 }
 
+.correct {
+    background-color: rgba(0, 255, 0, 0.6);
+    border-radius: 5px;
+    padding: 2px;
+}
+
 ul {
     list-style: none;
     text-align: left;
