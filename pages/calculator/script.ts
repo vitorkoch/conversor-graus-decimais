@@ -8,7 +8,7 @@ const ac = document.querySelector('[allClear]');
 const previousEle = document.querySelector('[previous-operand]');
 const currentEle = document.querySelector('[current-operand]');
 
-// Variables
+// Global Variables
 let sign = '';
 
 // Event Listeners
@@ -62,8 +62,8 @@ operations[3].addEventListener('click', () => {
 });
 del.addEventListener('click', delNum);
 equals.addEventListener('click', result);
-// Functions
 
+// Functions
 function addNum(num) {
     console.log(`Number ${num} added`);
     currentEle instanceof HTMLElement ? (currentEle.innerText += num) : '';

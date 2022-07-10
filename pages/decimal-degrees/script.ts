@@ -14,7 +14,7 @@ const southRadio = document.querySelector('[s]')
 const eastRadio = document.querySelector('[e]')
 const westRadio = document.querySelector('[w]')
 
-// Variables
+// Global Variables
 let signY = '+'
 let signX = '+'
 

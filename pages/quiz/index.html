@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Quiz</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <header>Quiz</header>
+        <div class="container" container>
+            <button type="button" id="start-btn" start-btn>
+                <i class="fa-solid fa-circle-play"></i> Start
+            </button>
+            <ul class="hide" questionary>
+                <li>
+                    <input type="radio" name="answer" id="a" a/>
+                    <label for="a"></label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="b" b/>
+                    <label for="b"></label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="c" c/>
+                    <label for="c"></label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="d" d/>
+                    <label for="d"></label>
+                </li>
+            </ul>
+        </div>
+        <button type="button" id="check-btn" check-btn class="hide">
+            <i class="fa-solid fa-check"></i>
+        </button>
+        <span id="message" message class="hide"> </span>
+        <button type="button" id="next-btn" next-btn class="hide">
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <button type="button" id="refresh-btn" refresh-btn class="hide">
+            <i class="fa-solid fa-rotate-right"></i>
+        </button>
+        <footer>&copy; vitorkoch</footer>
+    </body>
+</html>
