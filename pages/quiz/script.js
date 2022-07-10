@@ -14,6 +14,7 @@ let score = 0;
 let totalRounds = 0;
 let currentRound = 0;
 let answerChecked = '';
+let correctAnswer = '';
 startBtn.addEventListener('click', () => {
     startBtn.classList.add('hide');
     checkQuestions();
@@ -33,7 +34,6 @@ function start() {
     renderQue();
 }
 function check() {
-    console.log('Checked');
     if (answerA instanceof HTMLInputElement ? answerA.checked : '') {
         answerChecked = 'a';
     }
@@ -46,6 +46,7 @@ function check() {
     if (answerD instanceof HTMLInputElement ? answerD.checked : '') {
         answerChecked = 'd';
     }
+    console.log(`Answer '${answerChecked}' checked`);
     let messageHTML = '';
     if (correct()) {
         score += 10;
@@ -64,6 +65,7 @@ function check() {
         : '';
 }
 function newRound() {
+    let finalMessage = '';
     currentRound++;
     console.log('New question');
     console.log(`Current round => ${currentRound}`);
@@ -74,7 +76,16 @@ function newRound() {
     }
     else {
         console.log('Finished');
-        const finalContainer = `<h3>Congratulations!</h3><div>Your score was ${score}/${maxScore}</div>`;
+        if (score === maxScore) {
+            finalMessage = 'Perfect! 😎';
+        }
+        else if (score > maxScore / 2) {
+            finalMessage = 'Almost there 😕...';
+        }
+        else {
+            finalMessage = 'Good luck in the next time ❌';
+        }
+        const finalContainer = `<h3>Congratulations!</h3><div>Your score was ${score}/${maxScore}<br/>${finalMessage}</div>`;
         container instanceof HTMLElement
             ? (container.innerHTML = finalContainer)
             : '';
@@ -82,8 +93,8 @@ function newRound() {
     }
 }
 function correct() {
-    const correctAnswer = true;
-    if (correctAnswer) {
+    correctAnswer = '';
+    if (correctAnswer === '') {
         console.log('Correct answer');
         return true;
     }

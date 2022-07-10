@@ -14,10 +14,10 @@ const answerD = document.querySelector('[d]');
 // Global Variables
 let maxScore = 0;
 let score = 0;
-// TODO => Criar sistema de rounds
 let totalRounds = 0;
 let currentRound = 0;
 let answerChecked = '';
+let correctAnswer = '';
 
 // Event Listeners
 startBtn.addEventListener('click', () => {
@@ -34,7 +34,7 @@ refreshBtn.addEventListener('click', () => {
 // Functions
 function start() {
     currentRound++;
-    console.log(`Current round => ${currentRound}`)
+    console.log(`Current round => ${currentRound}`);
     console.log('Started');
     questionary.classList.remove('hide');
     checkBtn.classList.remove('hide');
@@ -43,7 +43,6 @@ function start() {
 }
 
 function check() {
-    console.log('Checked')
     if (answerA instanceof HTMLInputElement ? answerA.checked : '') {
         answerChecked = 'a';
     }
@@ -56,7 +55,7 @@ function check() {
     if (answerD instanceof HTMLInputElement ? answerD.checked : '') {
         answerChecked = 'd';
     }
-
+    console.log(`Answer '${answerChecked}' checked`);
     let messageHTML = '';
     if (correct()) {
         score += 10;
@@ -75,17 +74,25 @@ function check() {
 }
 
 function newRound() {
-    currentRound++
-    console.log('New question')
-    console.log(`Current round => ${currentRound}`)
+    let finalMessage = '';
+    currentRound++;
+    console.log('New question');
+    console.log(`Current round => ${currentRound}`);
     nextBtn.classList.add('hide');
     message.classList.add('hide');
     if (currentRound <= totalRounds) {
         checkBtn.classList.remove('hide');
     } else {
-        console.log('Finished')
+        console.log('Finished');
         // TODO => Deixar a tela final mais bonita
-        const finalContainer = `<h3>Congratulations!</h3><div>Your score was ${score}/${maxScore}</div>`;
+        if (score === maxScore) {
+            finalMessage = 'Perfect! 😎';
+        } else if (score >   maxScore / 2) {
+            finalMessage = 'Almost there 😕...';
+        } else {
+            finalMessage = 'Good luck in the next time ❌';
+        }
+        const finalContainer = `<h3>Congratulations!</h3><div>Your score was ${score}/${maxScore}<br/>${finalMessage}</div>`;
         container instanceof HTMLElement
             ? (container.innerHTML = finalContainer)
             : '';
@@ -95,18 +102,18 @@ function newRound() {
 
 function correct() {
     // TODO => Verificar se o usuário acertou
-    const correctAnswer = true;
-    if (correctAnswer) {
-        console.log('Correct answer')
+    correctAnswer = '';
+    if (correctAnswer === '') {
+        console.log('Correct answer');
         return true;
     } else {
-        console.log('Wrong answer')
+        console.log('Wrong answer');
         return false;
     }
 }
 
 function checkQuestions() {
-    console.log('Questions checked')
+    console.log('Questions checked');
     totalRounds = questions.length;
     maxScore = totalRounds * 10;
 }
