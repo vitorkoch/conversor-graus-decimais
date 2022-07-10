@@ -6,10 +6,15 @@ const nextBtn = document.querySelector('[next-btn]');
 const refreshBtn = document.querySelector('[refresh-btn]');
 const message = document.querySelector('[message]');
 const container = document.querySelector('[container]');
+const quesTitle = document.querySelector('[ques-title]');
 const answerA = document.querySelector('[a]');
+const textA = document.querySelector('[a-txt]');
 const answerB = document.querySelector('[b]');
+const textB = document.querySelector('[b-txt]');
 const answerC = document.querySelector('[c]');
+const textC = document.querySelector('[c-txt]');
 const answerD = document.querySelector('[d]');
+const textD = document.querySelector('[d-txt]');
 
 // Global Variables
 let maxScore = 0;
@@ -18,6 +23,8 @@ let totalRounds = 0;
 let currentRound = 0;
 let answerChecked = '';
 let correctAnswer = '';
+let usedQues = [];
+let random = 0;
 
 // Event Listeners
 startBtn.addEventListener('click', () => {
@@ -80,17 +87,18 @@ function newRound() {
     console.log(`Current round => ${currentRound}`);
     nextBtn.classList.add('hide');
     message.classList.add('hide');
+    deselectAnswer();
     if (currentRound <= totalRounds) {
         checkBtn.classList.remove('hide');
+        renderQue();
     } else {
         console.log('Finished');
-        // TODO => Deixar a tela final mais bonita
         if (score === maxScore) {
             finalMessage = 'Perfect! 😎';
-        } else if (score >   maxScore / 2) {
+        } else if (score > maxScore / 2) {
             finalMessage = 'Almost there 😕...';
         } else {
-            finalMessage = 'Good luck in the next time ❌';
+            finalMessage = '❌ Good luck in the next time';
         }
         const finalContainer = `<h3>Congratulations!</h3><div>Your score was ${score}/${maxScore}<br/>${finalMessage}</div>`;
         container instanceof HTMLElement
@@ -102,8 +110,7 @@ function newRound() {
 
 function correct() {
     // TODO => Verificar se o usuário acertou
-    correctAnswer = '';
-    if (correctAnswer === '') {
+    if (answerChecked === questions[random].correct) {
         console.log('Correct answer');
         return true;
     } else {
@@ -118,56 +125,61 @@ function checkQuestions() {
     maxScore = totalRounds * 10;
 }
 
-function checkScore() {}
+function renderQue() {
+    const randomNum = generateRandomInteger();
+    console.log(`Question Number => ${randomNum}`);
+    console.log(`Used questions => ${usedQues}`);
+    quesTitle.innerHTML = questions[randomNum].question;
+    textA.innerHTML = questions[randomNum].answers[0];
+    textB.innerHTML = questions[randomNum].answers[1];
+    textC.innerHTML = questions[randomNum].answers[2];
+    textD.innerHTML = questions[randomNum].answers[3];
+}
 
-function renderQue() {}
+function deselectAnswer() {
+    answerA instanceof HTMLInputElement ? (answerA.checked = false) : '';
+    answerB instanceof HTMLInputElement ? (answerB.checked = false) : '';
+    answerC instanceof HTMLInputElement ? (answerC.checked = false) : '';
+    answerD instanceof HTMLInputElement ? (answerD.checked = false) : '';
+}
+
+// Generate a number between 0 and totalRounds - 1, including totalRounds - 1
+function generateRandomInteger() {
+    random = Math.floor(Math.random() * totalRounds - 1) + 1;
+    if (random in usedQues) {
+        console.log(`The random number was ${random} but already was used`)
+        generateRandomInteger();
+    }
+    usedQues.push(random);
+    return random;
+}
 
 // Questions
-// TODO => Terminar as perguntas
+// TODO => Usar uma API para conseguir as perguntas
 const questions = [
     {
-        question: 'Which is the height of the tallest person?',
-        answers: [
-            { text: '3m', correct: false },
-            { text: '2.5m', correct: true },
-            { text: '2m', correct: false },
-            { text: '3.5m', correct: false },
-        ],
+        question: 'Which is the height of the tallest person in the world?',
+        answers: ['3m', '2.5m', '2m', '3.5m'],
+        correct: 'b',
     },
     {
         question: 'Which is the length of the human intestines?',
-        answers: [
-            { text: '7.5m', correct: true },
-            { text: '2m', correct: false },
-            { text: '10.2m', correct: false },
-            { text: '5m', correct: false },
-        ],
+        answers: ['7.5m', '2m', '10.2m', '5m'],
+        correct: 'a',
     },
     {
         question: 'Which is the national flower of Japan',
-        answers: [
-            { text: 'Begonia', correct: false },
-            { text: 'Sakura', correct: false },
-            { text: 'Chrysanthemums', correct: true },
-            { text: 'Hydrangea', correct: false },
-        ],
+        answers: ['Begonia', 'Sakura', 'Chrysanthemums', 'Hydrangea'],
+        correct: 'c',
     },
     {
         question: 'In which year did man walk on the moon?',
-        answers: [
-            { text: '1970', correct: false },
-            { text: '1969', correct: true },
-            { text: '1958', correct: false },
-            { text: '1980', correct: false },
-        ],
+        answers: ['1970', '1969', '1958', '1980'],
+        correct: 'b',
     },
     {
-        question: '',
-        answers: [
-            { text: '', correct: true },
-            { text: '', correct: false },
-            { text: '', correct: false },
-            { text: '', correct: true },
-        ],
+        question: 'How many countries are there in the world?',
+        answers: ['208', '175', '182', '195'],
+        correct: 'd',
     },
 ];
