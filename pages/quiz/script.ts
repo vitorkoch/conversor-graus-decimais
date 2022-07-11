@@ -24,12 +24,13 @@ let currentRound = 0;
 let answerChecked = '';
 let correctAnswer = '';
 let usedQues = [];
-let random = 0;
+let queNum = 0;
 
 // Event Listeners
 startBtn.addEventListener('click', () => {
     startBtn.classList.add('hide');
-    checkQuestions();
+    totalRounds = questions.length;
+    maxScore = totalRounds * 10;
     start();
 });
 checkBtn.addEventListener('click', check);
@@ -50,17 +51,17 @@ function start() {
 }
 
 function check() {
-    disableRadio()
+    disableRadio();
     if (answerA instanceof HTMLInputElement ? answerA.checked : '') {
-        answerChecked = 'a';
+        answerChecked = textA.innerHTML;
     } else if (answerB instanceof HTMLInputElement ? answerB.checked : '') {
-        answerChecked = 'b';
+        answerChecked = textB.innerHTML;
     } else if (answerC instanceof HTMLInputElement ? answerC.checked : '') {
-        answerChecked = 'c';
+        answerChecked = textC.innerHTML;
     } else if (answerD instanceof HTMLInputElement ? answerD.checked : '') {
-        answerChecked = 'd';
+        answerChecked = textD.innerHTML;
     }
-    backgroundAdd()
+    backgroundAdd();
     console.log(`Answer '${answerChecked}' checked`);
     let messageHTML = '';
     if (correct()) {
@@ -80,8 +81,9 @@ function check() {
 }
 
 function newRound() {
-    backgroundRemove()
-    enableRadio()
+    queNum++
+    backgroundRemove();
+    enableRadio();
     let finalMessage = '';
     currentRound++;
     console.log('New question');
@@ -110,8 +112,7 @@ function newRound() {
 }
 
 function correct() {
-    // TODO => Verificar se o usuário acertou
-    if (answerChecked === questions[random].correct) {
+    if (answerChecked === questions[queNum].correct) {
         console.log('Correct answer');
         return true;
     } else {
@@ -120,21 +121,14 @@ function correct() {
     }
 }
 
-function checkQuestions() {
-    console.log('Questions checked');
-    totalRounds = questions.length;
-    maxScore = totalRounds * 10;
-}
-
 function renderQue() {
-    const randomNum = generateRandomInteger();
-    console.log(`Question Number => ${randomNum}`);
+    console.log(`Question Number => ${queNum}`);
     console.log(`Used questions => ${usedQues}`);
-    quesTitle.innerHTML = questions[randomNum].question;
-    textA.innerHTML = questions[randomNum].answers[0];
-    textB.innerHTML = questions[randomNum].answers[1];
-    textC.innerHTML = questions[randomNum].answers[2];
-    textD.innerHTML = questions[randomNum].answers[3];
+    quesTitle.innerHTML = questions[queNum].question;
+    textA.innerHTML = questions[queNum].answers[0];
+    textB.innerHTML = questions[queNum].answers[1];
+    textC.innerHTML = questions[queNum].answers[2];
+    textD.innerHTML = questions[queNum].answers[3];
 }
 
 function deselectAnswer() {
@@ -159,36 +153,25 @@ function enableRadio() {
 }
 
 function backgroundAdd() {
-    if(questions[random].correct === 'a') {
-        textA.classList.add('correct')
+    if (questions[queNum].correct === textA.innerHTML) {
+        textA.classList.add('correct');
     }
-    if(questions[random].correct === 'b') {
-        textB.classList.add('correct')
+    if (questions[queNum].correct === textB.innerHTML) {
+        textB.classList.add('correct');
     }
-    if(questions[random].correct === 'c') {
-        textC.classList.add('correct')
+    if (questions[queNum].correct === textC.innerHTML) {
+        textC.classList.add('correct');
     }
-    if(questions[random].correct === 'd') {
-        textD.classList.add('correct')
+    if (questions[queNum].correct === textD.innerHTML) {
+        textD.classList.add('correct');
     }
 }
 
 function backgroundRemove() {
-    textA.classList.remove('correct')
-    textB.classList.remove('correct')
-    textC.classList.remove('correct')
-    textD.classList.remove('correct')
-}
-
-// Generate a number between 0 and totalRounds - 1, including totalRounds - 1
-function generateRandomInteger() {
-    random = Math.floor(Math.random() * totalRounds - 1) + 1;
-    if (random in usedQues) {
-        console.log(`The random number was ${random} but already was used`);
-        generateRandomInteger();
-    }
-    usedQues.push(random);
-    return random;
+    textA.classList.remove('correct');
+    textB.classList.remove('correct');
+    textC.classList.remove('correct');
+    textD.classList.remove('correct');
 }
 
 // Questions
@@ -197,26 +180,26 @@ const questions = [
     {
         question: 'Which is the height of the tallest person in the world?',
         answers: ['3m', '2.5m', '2m', '3.5m'],
-        correct: 'b',
+        correct: '2.5m',
     },
     {
         question: 'Which is the length of the human intestines?',
         answers: ['7.5m', '2m', '10.2m', '5m'],
-        correct: 'a',
+        correct: '7.5m',
     },
     {
         question: 'Which is the national flower of Japan',
         answers: ['Begonia', 'Sakura', 'Chrysanthemums', 'Hydrangea'],
-        correct: 'c',
+        correct: 'Chrysanthemums',
     },
     {
         question: 'In which year did man walk on the moon?',
         answers: ['1970', '1969', '1958', '1980'],
-        correct: 'b',
+        correct: '1969',
     },
     {
         question: 'How many countries are there in the world?',
         answers: ['208', '175', '182', '195'],
-        correct: 'd',
+        correct: '195',
     },
 ];
