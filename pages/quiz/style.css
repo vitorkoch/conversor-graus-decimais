@@ -9,8 +9,8 @@
 }
 
 header {
-    font-size: 1.5rem;
-    min-height: 10vh;
+    font-size: 24px;
+    min-height: 8vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,7 +66,9 @@ button:hover {
     word-wrap: break-word;
 }
 
-#check-btn, #next-btn, #refresh-btn {
+#check-btn,
+#next-btn,
+#refresh-btn {
     width: 25rem;
     max-width: 90%;
     font-size: 1.2rem;
@@ -77,17 +79,18 @@ button:hover {
 }
 
 #next-btn {
-    background-color: lightblue ;
+    background-color: lightblue;
 }
 
 #refresh-btn {
     background-color: lightcoral;
 }
 #message-container {
-    font-size: 1.2rem ;
+    font-size: 1.2rem;
 }
 
-#right-message, #wrong-message {
+#right-message,
+#wrong-message {
     border-radius: 8px;
 }
 
@@ -116,13 +119,23 @@ ul {
 
 a:link,
 a:visited {
-    color: rgba(0, 0, 0, 0.8);
+    color: rgb(0, 0, 0);
     text-decoration: none;
     cursor: pointer;
 }
 
-a:link:active,
-a:visited:active {
-    color: rgb(0, 0, 0);
+#menu {
+    font-size: 1.2rem;
+    width: 28px;
+    margin: auto;
+    margin-top: 8px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 1);
+    opacity: 0.8;
+    text-align: center;
+}
+
+#menu:hover {
+    opacity: 1;
     transition: 250ms;
 }
