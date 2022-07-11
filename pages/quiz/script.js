@@ -44,16 +44,16 @@ function start() {
 function check() {
     disableRadio();
     if (answerA instanceof HTMLInputElement ? answerA.checked : '') {
-        answerChecked = textA.innerHTML;
+        answerChecked = questions[queNum].answers[0];
     }
     else if (answerB instanceof HTMLInputElement ? answerB.checked : '') {
-        answerChecked = textB.innerHTML;
+        answerChecked = questions[queNum].answers[1];
     }
     else if (answerC instanceof HTMLInputElement ? answerC.checked : '') {
-        answerChecked = textC.innerHTML;
+        answerChecked = questions[queNum].answers[2];
     }
     else if (answerD instanceof HTMLInputElement ? answerD.checked : '') {
-        answerChecked = textD.innerHTML;
+        answerChecked = questions[queNum].answers[3];
     }
     backgroundAdd();
     console.log(`Answer '${answerChecked}' checked`);
@@ -145,16 +145,16 @@ function enableRadio() {
     answerD instanceof HTMLInputElement ? (answerD.disabled = false) : '';
 }
 function backgroundAdd() {
-    if (questions[queNum].correct === textA.innerHTML) {
+    if (questions[queNum].correct === questions[queNum].answers[0]) {
         textA.classList.add('correct');
     }
-    if (questions[queNum].correct === textB.innerHTML) {
+    if (questions[queNum].correct === questions[queNum].answers[1]) {
         textB.classList.add('correct');
     }
-    if (questions[queNum].correct === textC.innerHTML) {
+    if (questions[queNum].correct === questions[queNum].answers[2]) {
         textC.classList.add('correct');
     }
-    if (questions[queNum].correct === textD.innerHTML) {
+    if (questions[queNum].correct === questions[queNum].answers[3]) {
         textD.classList.add('correct');
     }
 }
