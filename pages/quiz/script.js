@@ -14,25 +14,20 @@ const answerC = document.querySelector('[c]');
 const textC = document.querySelector('[c-txt]');
 const answerD = document.querySelector('[d]');
 const textD = document.querySelector('[d-txt]');
-let maxScore = 0;
+const maxScore = 50;
+const totalRounds = 5;
 let score = 0;
-let totalRounds = 0;
 let currentRound = 0;
 let answerChecked = '';
 let correctAnswer = '';
-let usedQues = [];
 let queNum = 0;
 startBtn.addEventListener('click', () => {
     startBtn.classList.add('hide');
-    totalRounds = questions.length;
-    maxScore = totalRounds * 10;
     start();
 });
 checkBtn.addEventListener('click', check);
 nextBtn.addEventListener('click', newRound);
-refreshBtn.addEventListener('click', () => {
-    document.location.reload();
-});
+refreshBtn.addEventListener('click', () => document.location.reload());
 function start() {
     currentRound++;
     console.log(`Current round => ${currentRound}`);
@@ -42,7 +37,7 @@ function start() {
     renderQue();
 }
 function check() {
-    disableRadio();
+    toggleRadio(true);
     if (answerA instanceof HTMLInputElement ? answerA.checked : '') {
         answerChecked = questions[queNum].answers[0];
     }
@@ -55,7 +50,7 @@ function check() {
     else if (answerD instanceof HTMLInputElement ? answerD.checked : '') {
         answerChecked = questions[queNum].answers[3];
     }
-    backgroundAdd();
+    backgroundChange();
     console.log(`Answer '${answerChecked}' checked`);
     let messageHTML = '';
     if (correct()) {
@@ -77,7 +72,7 @@ function check() {
 function newRound() {
     queNum++;
     backgroundRemove();
-    enableRadio();
+    toggleRadio(false);
     let finalMessage = '';
     currentRound++;
     console.log('New question');
@@ -119,7 +114,6 @@ function correct() {
 }
 function renderQue() {
     console.log(`Question Number => ${queNum}`);
-    console.log(`Used questions => ${usedQues}`);
     quesTitle.innerHTML = questions[queNum].question;
     textA.innerHTML = questions[queNum].answers[0];
     textB.innerHTML = questions[queNum].answers[1];
@@ -132,19 +126,13 @@ function deselectAnswer() {
     answerC instanceof HTMLInputElement ? (answerC.checked = false) : '';
     answerD instanceof HTMLInputElement ? (answerD.checked = false) : '';
 }
-function disableRadio() {
-    answerA instanceof HTMLInputElement ? (answerA.disabled = true) : '';
-    answerB instanceof HTMLInputElement ? (answerB.disabled = true) : '';
-    answerC instanceof HTMLInputElement ? (answerC.disabled = true) : '';
-    answerD instanceof HTMLInputElement ? (answerD.disabled = true) : '';
+function toggleRadio(disabled) {
+    answerA instanceof HTMLInputElement ? (answerA.disabled = disabled) : '';
+    answerB instanceof HTMLInputElement ? (answerB.disabled = disabled) : '';
+    answerC instanceof HTMLInputElement ? (answerC.disabled = disabled) : '';
+    answerD instanceof HTMLInputElement ? (answerD.disabled = disabled) : '';
 }
-function enableRadio() {
-    answerA instanceof HTMLInputElement ? (answerA.disabled = false) : '';
-    answerB instanceof HTMLInputElement ? (answerB.disabled = false) : '';
-    answerC instanceof HTMLInputElement ? (answerC.disabled = false) : '';
-    answerD instanceof HTMLInputElement ? (answerD.disabled = false) : '';
-}
-function backgroundAdd() {
+function backgroundChange() {
     if (questions[queNum].correct === questions[queNum].answers[0]) {
         textA.classList.add('correct');
     }
