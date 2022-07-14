@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+* {
+    font-family: JetBrains Mono, sans-serif;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+header {
+    font-size: 1.5rem;
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    min-height: 100vh;
+    color: white;
+    background-color: #16833a;
+    background-image: linear-gradient(315deg, #16833a, #0183a7);
+    text-align: center;
+}
+
+#fullbar {
+    display: flex;
+    margin: auto;
+    display: block;
+    border-radius: 8px;
+    height: 10px;
+    width: 400px;
+    max-width: 75%;
+    background-color: rgb(255, 255, 255, 0);
+    padding: 0px;
+    border: solid white 2px;
+}
+
+#progress {
+    height: 8px;
+    width: 50%;
+    margin: auto;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.action-button {
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    font-size: 22px;
+    margin-top: 14px;
+}
+
+footer {
+    text-align: center;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+input,
+button {
+    margin: 0.3rem;
+    border-radius: 0.3rem;
+    padding: 0.2rem;
+    font-size: 0.9rem;
+}
+
+button {
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: -10px;
+    opacity: 0.8;
+}
+
+button:hover {
+    opacity: 1;
+    transition: 250ms;
+}
+
+#timer {
+    font-size: 35px;
+}
+
+a:link,
+a:visited {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#menu {
+    font-size: 1.2rem;
+    width: 28px;
+    margin: auto;
+    margin-top: 8px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 1);
+    opacity: 0.8;
+    text-align: center;
+}
+
+#menu:hover {
+    opacity: 1;
+    transition: 250ms;
+}
+
+:disabled {
+    opacity: 1;
+    cursor: default;
+    color: default;
+}
+
+.hide {
+    display: none;
+}

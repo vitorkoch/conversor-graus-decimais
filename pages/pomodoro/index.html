@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pomodoro Timer</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <div id="menu">
+            <a href="/index.html"><i class="fa-solid fa-bars"></i></a>
+        </div>
+        <header><h3>Pomodoro Timer</h3></header>
+        <button type="button" pomodoro disabled>Pomodoro</button>
+        <button type="button" short-break>Short Break</button>
+        <button type="button" long-break>Long Break</button>
+        <div>
+            <span id="timer" timer>25:00</span>
+            <div id="fullbar">
+                <div id="progress" progress></div>
+            </div>
+            <div class="buttons">
+                <button type="button" class="action-button" play>
+                    <i class="fa-solid fa-play"></i>
+                </button>
+                <button type="button" class="action-button" pause>
+                    <i class="fa-solid fa-pause"></i>
+                </button>
+                <button type="button" class="action-button" restart>
+                    <i class="fa-solid fa-rotate-right"></i>
+                </button>
+            </div>
+        </div>
+        <footer>&copy; vitorkoch</footer>
+    </body>
+</html>
