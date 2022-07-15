@@ -11,3 +11,5 @@ My sandbox for web development
 | [Rule of 3](https://my-sites-theta.vercel.app/pages/rule-of-3/index.html) | Myself |
 | [Calculator](https://my-sites-theta.vercel.app/pages/calculator/index.html) | HTML and CSS: [Web Dev](https://youtu.be/j59qQ7YWLxw)<br> JavaScript: Myself |
 | [Decimal Degrees<br>Converter](https://my-sites-theta.vercel.app/pages/decimal-degrees/index.html) | Myself |
+| [Quiz](https://my-sites-theta.vercel.app/pages/quiz/index.html) | Myself |
+| [Pomodoro Timer](https://my-sites-oomgz8yum-vitorkoch.vercel.app/pages/pomodoro/index.html) | Myself |
