@@ -20,9 +20,12 @@
             <a href="/index.html"><i class="fa-solid fa-bars"></i></a>
         </div>
         <header><h3>Pomodoro Timer</h3></header>
-        <button type="button" pomodoro disabled>Pomodoro</button>
+        <button type="button" pomodoro>Pomodoro</button>
         <button type="button" short-break>Short Break</button>
         <button type="button" long-break>Long Break</button>
+        <button type="button" config>
+            <i class="fa-solid fa-gear"></i>
+        </button>
         <div>
             <span id="timer" timer>25:00</span>
             <div id="fullbar">
@@ -35,10 +38,8 @@
                 <button type="button" class="action-button hide" pause>
                     <i class="fa-solid fa-pause"></i>
                 </button>
-                <button type="button" class="action-button hide" restart>
-                    <i class="fa-solid fa-rotate-right"></i>
-                </button>
             </div>
+            <blockquote class="quote-box" quote-box></blockquote>
         </div>
         <footer>&copy; vitorkoch</footer>
     </body>
