@@ -60,6 +60,9 @@ configBtn.addEventListener('click', () => {
     pomodoroTime = parseInt(prompt('Pomodoro duration (in minutes)')) * 60
     shortBreakTime = parseInt(prompt('Short break duration (in minutes)')) * 60
     longBreakTime = parseInt(prompt('Long break duration (in minutes)')) * 60
+    fullTime = pomodoroTime
+    remainTime = fullTime
+    updateTimer()
 })
 // Functions
 function start() {
@@ -116,5 +119,5 @@ async function changeQuote() {
 }
 changeQuote();
 
-setInterval(updateTimer, 1);
+setInterval(updateTimer, 1000);
 setInterval(changeQuote, 18000);
