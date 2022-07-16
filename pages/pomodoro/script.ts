@@ -1,13 +1,19 @@
+// BUG => When lost focus it stop
+Notification.requestPermission().then((permission) => {
+    console.log('Notification permission', permission);
+});
+
 // Selectors
 const startBtn = document.querySelector('[start]');
 const pauseBtn = document.querySelector('[pause]');
 const pomodoroBtn = document.querySelector('[pomodoro]');
 const shortBreakBtn = document.querySelector('[short-break]');
 const longBreakBtn = document.querySelector('[long-break]');
-const configBtn = document.querySelector('[config]')
+const configBtn = document.querySelector('[config]');
 const timer = document.querySelector('[timer]');
 const progressBar = document.querySelector('[progress-bar]');
 const quoteBox = document.querySelector('[quote-box]');
+const title = document.querySelector('title')
 
 // Global Variables
 let active = false;
@@ -57,14 +63,22 @@ longBreakBtn.addEventListener('click', () => {
     remainTime = fullTime;
 });
 configBtn.addEventListener('click', () => {
-    pomodoroTime = parseInt(prompt('Pomodoro duration (in minutes)')) * 60
-    shortBreakTime = parseInt(prompt('Short break duration (in minutes)')) * 60
-    longBreakTime = parseInt(prompt('Long break duration (in minutes)')) * 60
-    fullTime = pomodoroTime
-    remainTime = fullTime
-    updateTimer()
-})
+    pomodoroTime = parseInt(prompt('Pomodoro duration (in minutes)')) * 60;
+    shortBreakTime = parseInt(prompt('Short break duration (in minutes)')) * 60;
+    longBreakTime = parseInt(prompt('Long break duration (in minutes)')) * 60;
+    fullTime = pomodoroTime;
+    remainTime = fullTime;
+    updateTimer();
+});
 // Functions
+function notification(title, body, icon = '/media/timer.png') {
+    new Notification(title, {
+        body: body,
+        icon: icon,
+    });
+    playSound('/media/notification.mp3');
+}
+
 function start() {
     active = true;
 }
@@ -91,13 +105,21 @@ function updateTimer() {
             var remainSecondsTxt = `${remainSeconds}`;
         }
         timer.innerHTML = `${remainMinutesTxt}:${remainSecondsTxt}`;
+        title.textContent = `${timer.innerHTML} Pomodoro`
         updateBar();
     } else if (remainTime === 0) {
         pause();
         pauseBtn.classList.add('hide');
         startBtn.classList.remove('hide');
-        fullTime = shortBreakTime;
-        remainTime = fullTime;
+        if (fullTime === pomodoroTime) {
+            notification('Pomodoro Timer', 'Pomodoro finished');
+            fullTime = shortBreakTime;
+            remainTime = fullTime;
+        } else if (fullTime === shortBreakTime) {
+            notification('Pomodoro Timer', 'Short break finished');
+            fullTime = pomodoroTime;
+            remainTime = fullTime;
+        }
     }
 }
 
@@ -115,9 +137,13 @@ async function changeQuote() {
     const data = await response.json();
     quoteBox.innerHTML = `"${await data.quotes[0].text}"<br>${await data
         .quotes[0].author}`;
-    console.log(await data);
 }
 changeQuote();
 
-setInterval(updateTimer, 1000);
+function playSound(url) {
+    const audio = new Audio(url);
+    audio.play();
+}
+
+setInterval(updateTimer, 10);
 setInterval(changeQuote, 18000);
