@@ -7,7 +7,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Notification.requestPermission().then((permission) => console.log('Notification permission', permission));
+Notification.requestPermission().then((permission) => {
+    console.log('Notification permission', permission);
+});
 const startBtn = document.querySelector('[start]');
 const pauseBtn = document.querySelector('[pause]');
 const pomodoroBtn = document.querySelector('[pomodoro]');
@@ -74,7 +76,7 @@ function notification(title, body, icon = '/media/timer.png') {
         body: body,
         icon: icon,
     });
-    playSound('/media/notification_sound.mp3');
+    playSound('/media/notification.mp3');
 }
 function start() {
     active = true;
@@ -134,10 +136,10 @@ function changeQuote() {
             .quotes[0].author}`;
     });
 }
+changeQuote();
 function playSound(url) {
     const audio = new Audio(url);
     audio.play();
 }
-changeQuote();
-setInterval(updateTimer, 1);
+setInterval(updateTimer, 1000);
 setInterval(changeQuote, 18000);

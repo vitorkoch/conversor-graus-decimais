@@ -1,7 +1,7 @@
-// TODO => Add a free copy icon
-Notification.requestPermission().then((permission) =>
-    console.log('Notification permission', permission)
-);
+// BUG => When lost focus it stop
+Notification.requestPermission().then((permission) => {
+    console.log('Notification permission', permission);
+});
 
 // Selectors
 const startBtn = document.querySelector('[start]');
@@ -75,7 +75,7 @@ function notification(title, body, icon = '/media/timer.png') {
         body: body,
         icon: icon,
     });
-    playSound('/media/notification_sound.mp3');
+    playSound('/media/notification.mp3');
 }
 
 function start() {
@@ -114,9 +114,9 @@ function updateTimer() {
             fullTime = shortBreakTime;
             remainTime = fullTime;
         } else if (fullTime === shortBreakTime) {
-            notification('Pomodoro Timer', 'Short break finished')
-            fullTime = pomodoroTime
-            remainTime = fullTime
+            notification('Pomodoro Timer', 'Short break finished');
+            fullTime = pomodoroTime;
+            remainTime = fullTime;
         }
     }
 }
@@ -136,11 +136,12 @@ async function changeQuote() {
     quoteBox.innerHTML = `"${await data.quotes[0].text}"<br>${await data
         .quotes[0].author}`;
 }
+changeQuote();
+
 function playSound(url) {
     const audio = new Audio(url);
     audio.play();
 }
-changeQuote();
 
-setInterval(updateTimer, 1);
+setInterval(updateTimer, 1000);
 setInterval(changeQuote, 18000);
