@@ -146,4 +146,4 @@ function playSound(url) {
 }
 
 setInterval(updateTimer, 1000);
-setInterval(changeQuote, 18000);
+setInterval(changeQuote, 20000);
