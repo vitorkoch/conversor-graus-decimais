@@ -19,6 +19,7 @@ const configBtn = document.querySelector('[config]');
 const timer = document.querySelector('[timer]');
 const progressBar = document.querySelector('[progress-bar]');
 const quoteBox = document.querySelector('[quote-box]');
+const title = document.querySelector('title');
 let active = false;
 let pomodoroTime = 1500;
 let shortBreakTime = 300;
@@ -104,6 +105,7 @@ function updateTimer() {
             var remainSecondsTxt = `${remainSeconds}`;
         }
         timer.innerHTML = `${remainMinutesTxt}:${remainSecondsTxt}`;
+        title.textContent = `${timer.innerHTML} Pomodoro`;
         updateBar();
     }
     else if (remainTime === 0) {
@@ -141,5 +143,5 @@ function playSound(url) {
     const audio = new Audio(url);
     audio.play();
 }
-setInterval(updateTimer, 1000);
+setInterval(updateTimer, 10);
 setInterval(changeQuote, 18000);
