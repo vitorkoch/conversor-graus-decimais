@@ -143,5 +143,5 @@ function playSound(url) {
     const audio = new Audio(url);
     audio.play();
 }
-setInterval(updateTimer, 10);
+setInterval(updateTimer, 1000);
 setInterval(changeQuote, 18000);
