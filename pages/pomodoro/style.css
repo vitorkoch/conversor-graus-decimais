@@ -88,6 +88,10 @@ button:hover {
     font-size: 35px;
 }
 
+iframe {
+    border-radius: 16px;
+}
+
 a:link,
 a:visited {
     color: rgb(0, 0, 0);
