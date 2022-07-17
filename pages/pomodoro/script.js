@@ -28,6 +28,8 @@ let remainMinutes = 0;
 let remainSeconds = 0;
 let fullTime = pomodoroTime;
 let remainTime = fullTime;
+let initialTime = 0;
+let currentTime = 0;
 startBtn.addEventListener('click', () => {
     console.log('Start button clicked');
     startBtn.classList.add('hide');
@@ -79,6 +81,9 @@ function notification(title, body, icon = '/media/timer.png') {
     });
     playSound('/media/notification.mp3');
 }
+function getTime() {
+    return new Date().getTime() / 1000;
+}
 function start() {
     active = true;
 }
@@ -86,6 +91,7 @@ function pause() {
     active = false;
 }
 function updateTimer() {
+    console.log(getTime());
     if (remainTime > 0) {
         if (active) {
             remainTime--;

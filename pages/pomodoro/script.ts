@@ -1,4 +1,6 @@
-// BUG => When lost focus it stop
+// FIXME: When lost focus stop working
+// TODO: Use device time for timer
+
 Notification.requestPermission().then((permission) => {
     console.log('Notification permission', permission);
 });
@@ -13,7 +15,7 @@ const configBtn = document.querySelector('[config]');
 const timer = document.querySelector('[timer]');
 const progressBar = document.querySelector('[progress-bar]');
 const quoteBox = document.querySelector('[quote-box]');
-const title = document.querySelector('title')
+const title = document.querySelector('title');
 
 // Global Variables
 let active = false;
@@ -24,6 +26,8 @@ let remainMinutes = 0;
 let remainSeconds = 0;
 let fullTime = pomodoroTime;
 let remainTime = fullTime;
+let initialTime = 0;
+let currentTime = 0;
 
 // Event Listeners
 startBtn.addEventListener('click', () => {
@@ -79,6 +83,10 @@ function notification(title, body, icon = '/media/timer.png') {
     playSound('/media/notification.mp3');
 }
 
+function getTime() {
+    return new Date().getTime() / 1000
+}
+
 function start() {
     active = true;
 }
@@ -88,6 +96,7 @@ function pause() {
 }
 
 function updateTimer() {
+    console.log(getTime())
     if (remainTime > 0) {
         if (active) {
             remainTime--;
@@ -105,7 +114,7 @@ function updateTimer() {
             var remainSecondsTxt = `${remainSeconds}`;
         }
         timer.innerHTML = `${remainMinutesTxt}:${remainSecondsTxt}`;
-        title.textContent = `${timer.innerHTML} Pomodoro`
+        title.textContent = `${timer.innerHTML} Pomodoro`;
         updateBar();
     } else if (remainTime === 0) {
         pause();

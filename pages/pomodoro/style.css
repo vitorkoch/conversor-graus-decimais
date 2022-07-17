@@ -90,6 +90,9 @@ button:hover {
 
 iframe {
     border-radius: 16px;
+    width: 400px;
+    max-width: 80%;
+    height: 200px;
 }
 
 a:link,
