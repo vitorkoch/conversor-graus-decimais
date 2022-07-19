@@ -14,19 +14,31 @@
             referrerpolicy="no-referrer"
         />
         <link rel="icon" href="/media/timer.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
         <script src="script.js" defer></script>
     </head>
     <body>
         <div id="menu">
             <a href="/index.html"><i class="fa-solid fa-bars"></i></a>
         </div>
-        <header><h3>Pomodoro Timer</h3></header>
-        <button type="button" pomodoro>Pomodoro</button>
-        <button type="button" short-break>Short Break</button>
-        <button type="button" long-break>Long Break</button>
-        <button type="button" config>
-            <i class="fa-solid fa-gear"></i>
-        </button>
+        <header><h1>Pomodoro Timer</h1></header>
+        <nav>
+            <button type="button" pomodoro class="mode-button">Pomodoro</button>
+            <button type="button" short-break class="mode-button">
+                Short Break
+            </button>
+            <button type="button" long-break class="mode-button">
+                Long Break
+            </button>
+            <button type="button" config>
+                <i class="fa-solid fa-gear"></i>
+            </button>
+        </nav>
         <div>
             <span id="timer" timer>25:00</span>
             <div id="fullbar">
@@ -40,7 +52,13 @@
                     <i class="fa-solid fa-pause"></i>
                 </button>
             </div>
-            <iframe src="https://www.youtube.com/embed/jfKfPfyJRdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe
+                src="https://www.youtube.com/embed/jfKfPfyJRdk"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+            ></iframe>
             <blockquote class="quote-box" quote-box></blockquote>
         </div>
         <footer>&copy; vitorkoch</footer>

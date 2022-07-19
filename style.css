@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
-
 * {
-    font-family: JetBrains Mono, sans-serif;
+    font-family: Poppins, sans-serif;
     margin: 0;
     padding: 0;
     border: none;
@@ -9,7 +7,7 @@
 }
 
 header {
-    font-size: 24px;
+
     min-height: 8vh;
     display: flex;
     justify-content: center;
