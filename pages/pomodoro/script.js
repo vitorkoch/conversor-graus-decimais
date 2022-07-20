@@ -74,12 +74,12 @@ configBtn.addEventListener('click', () => {
     remainTime = fullTime;
     updateTimer();
 });
-function notification(title, body, icon = '/media/timer.png') {
+function notification(title, body, icon = '../../media/timer.png') {
     new Notification(title, {
         body: body,
         icon: icon,
     });
-    playSound('/media/notification.mp3');
+    playSound('../../media/notification.mp3');
 }
 function getTime() {
     return new Date().getTime() / 1000;
