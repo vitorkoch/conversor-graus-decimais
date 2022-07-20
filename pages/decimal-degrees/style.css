@@ -1,27 +1,8 @@
-* {
-    font-family: Poppins, sans-serif;
-    margin: 0;
-    padding: 0;
-    border: none;
-    box-sizing: border-box;
-}
-
-header {
-    min-height: 8vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 body {
-    min-height: 100vh;
-    color: white;
-    background-color: #16833a;
-    background-image: linear-gradient(315deg, #16833a, #0183a7);
     text-align: center;
 }
 
-.container {
+.container-decimal-degrees {
     margin: auto;
     color: black;
     background-color: rgba(255, 255, 255, 0.7);
@@ -66,9 +47,10 @@ button {
 .radio {
     margin: auto;
 }
+
 button {
     cursor: pointer;
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 button:hover {
@@ -84,25 +66,3 @@ button:hover {
     padding: 0;
 }
 
-a:link,
-a:visited {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    cursor: pointer;
-}
-
-#menu {
-    font-size: 1.2rem;
-    width: 28px;
-    margin: auto;
-    margin-top: 8px;
-    border-radius: 8px;
-    background-color: rgba(255, 255, 255, 1);
-    opacity: 0.8;
-    text-align: center;
-}
-
-#menu:hover {
-    opacity: 1;
-    transition: 250ms;
-}
