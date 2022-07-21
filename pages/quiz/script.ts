@@ -47,7 +47,7 @@ function start() {
 }
 
 function check() {
-    playSound('../../media/notification.mp3');
+    playSound('../../media/notification.mp3', 0.1);
     toggleRadio(true);
     if (answerA instanceof HTMLInputElement ? answerA.checked : '') {
         answerChecked = questions[queNum].answers[0];
@@ -95,13 +95,13 @@ function newRound() {
         console.log('Finished');
         if (score === maxScore) {
             finalMessage = 'Perfect! 😎';
-            playSound('../../media/crowd-yeah.mp3');
+            playSound('../../media/crowd-yeah.mp3', 0.8);
         } else if (score > maxScore / 2) {
             finalMessage = 'Almost there 😕...';
             playSound('../../media/sad.mp3');
         } else {
             finalMessage = '❌ Good luck in the next time';
-            playSound('../../media/fail-trumpet.mp3');
+            playSound('../../media/fail-trumpet.mp3', 0.8);
         }
         const finalContainer = `<h3>Congratulations!</h3><div>Your score was ${score}/${maxScore}<br/>${finalMessage}</div>`;
         container instanceof HTMLElement
@@ -166,8 +166,9 @@ function backgroundRemove() {
     textD.classList.remove('correct');
 }
 
-function playSound(url) {
+function playSound(url, volume = 1) {
     const audio = new Audio(url);
+    audio.volume = volume;
     audio.play();
 }
 

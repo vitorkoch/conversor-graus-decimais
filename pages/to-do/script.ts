@@ -52,10 +52,11 @@ function deleteCheck(e) {
         const todo = item.parentElement;
         todo.classList.toggle('completed');
     }
-    playSound('../../media/notification.mp3')
+    playSound('../../media/notification.mp3', 0.1);
 }
 
-function playSound(url) {
+function playSound(url, volume = 1) {
     const audio = new Audio(url);
+    audio.volume = volume;
     audio.play();
 }

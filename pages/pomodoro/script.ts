@@ -84,7 +84,7 @@ function notification(title, body, icon = '../../media/timer.png') {
 }
 
 function getTime() {
-    return new Date().getTime() / 1000
+    return new Date().getTime() / 1000;
 }
 
 function start() {
@@ -96,7 +96,7 @@ function pause() {
 }
 
 function updateTimer() {
-    console.log(getTime())
+    console.log(getTime());
     if (remainTime > 0) {
         if (active) {
             remainTime--;
@@ -149,8 +149,9 @@ async function changeQuote() {
 }
 changeQuote();
 
-function playSound(url) {
+function playSound(url, volume = 1) {
     const audio = new Audio(url);
+    audio.volume = volume;
     audio.play();
 }
 
