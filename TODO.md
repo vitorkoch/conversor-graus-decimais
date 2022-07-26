@@ -1,0 +1,2 @@
+- TODO: Corrigir tamanho do input no celular
+- TODO: Achar uma fonte mais bonita
