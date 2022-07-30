@@ -7,6 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+changeQuote();
 Notification.requestPermission().then((permission) => {
     console.log('Notification permission', permission);
 });
@@ -144,9 +145,9 @@ function changeQuote() {
             .quotes[0].author}`;
     });
 }
-changeQuote();
-function playSound(url) {
+function playSound(url, volume = 1) {
     const audio = new Audio(url);
+    audio.volume = volume;
     audio.play();
 }
 setInterval(updateTimer, 1000);

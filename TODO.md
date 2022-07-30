@@ -1,1 +1,1 @@
-1. TODO: Deixar tamanho dos elementos responsivo
+1. TODO => Deixar tamanho dos elementos responsivo

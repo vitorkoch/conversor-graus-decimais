@@ -1,6 +1,8 @@
-// FIXME: When lost focus stop working
-// TODO: Use device time for timer
+// FIXME => When lost focus stop working
+// TODO => Use device time for timer
+// BUG => Quote api doesn't working
 
+changeQuote();
 Notification.requestPermission().then((permission) => {
     console.log('Notification permission', permission);
 });
@@ -147,7 +149,6 @@ async function changeQuote() {
     quoteBox.innerHTML = `"${await data.quotes[0].text}"<br>${await data
         .quotes[0].author}`;
 }
-changeQuote();
 
 function playSound(url, volume = 1) {
     const audio = new Audio(url);
