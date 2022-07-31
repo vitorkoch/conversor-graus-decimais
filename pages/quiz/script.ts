@@ -47,34 +47,47 @@ function start() {
 }
 
 function check() {
-    playSound('../../media/notification.mp3', 0.1);
-    toggleRadio(true);
-    if (answerA instanceof HTMLInputElement ? answerA.checked : '') {
-        answerChecked = questions[queNum].answers[0];
-    } else if (answerB instanceof HTMLInputElement ? answerB.checked : '') {
-        answerChecked = questions[queNum].answers[1];
-    } else if (answerC instanceof HTMLInputElement ? answerC.checked : '') {
-        answerChecked = questions[queNum].answers[2];
-    } else if (answerD instanceof HTMLInputElement ? answerD.checked : '') {
-        answerChecked = questions[queNum].answers[3];
+    if (
+        !(
+            (answerA instanceof HTMLInputElement ? answerA.checked : '') ===
+                false &&
+            (answerB instanceof HTMLInputElement ? answerB.checked : '') ===
+                false &&
+            (answerC instanceof HTMLInputElement ? answerC.checked : '') ===
+                false &&
+            (answerD instanceof HTMLInputElement ? answerD.checked : '') ===
+                false
+        )
+    ) {
+        playSound('../../media/notification.mp3', 0.1);
+        toggleRadio(true);
+        if (answerA instanceof HTMLInputElement ? answerA.checked : '') {
+            answerChecked = questions[queNum].answers[0];
+        } else if (answerB instanceof HTMLInputElement ? answerB.checked : '') {
+            answerChecked = questions[queNum].answers[1];
+        } else if (answerC instanceof HTMLInputElement ? answerC.checked : '') {
+            answerChecked = questions[queNum].answers[2];
+        } else if (answerD instanceof HTMLInputElement ? answerD.checked : '') {
+            answerChecked = questions[queNum].answers[3];
+        }
+        backgroundChange();
+        console.log(`Answer '${answerChecked}' checked`);
+        let messageHTML = '';
+        if (correct()) {
+            score += 10;
+            messageHTML =
+                '<span id="right-message"><i class="fa-solid fa-circle-check"></i> Right Answer</span>';
+        } else {
+            messageHTML =
+                '<span id="wrong-message"><i class="fa-solid fa-circle-xmark"></i> Wrong Answer</span>';
+        }
+        nextBtn.classList.remove('hide');
+        message.classList.remove('hide');
+        checkBtn.classList.add('hide');
+        message instanceof HTMLElement
+            ? (message.innerHTML = `<div id="message-container">${messageHTML}<br>Score: ${score}/${maxScore}<br></div>`)
+            : '';
     }
-    backgroundChange();
-    console.log(`Answer '${answerChecked}' checked`);
-    let messageHTML = '';
-    if (correct()) {
-        score += 10;
-        messageHTML =
-            '<span id="right-message"><i class="fa-solid fa-circle-check"></i> Right Answer</span>';
-    } else {
-        messageHTML =
-            '<span id="wrong-message"><i class="fa-solid fa-circle-xmark"></i> Wrong Answer</span>';
-    }
-    nextBtn.classList.remove('hide');
-    message.classList.remove('hide');
-    checkBtn.classList.add('hide');
-    message instanceof HTMLElement
-        ? (message.innerHTML = `<div id="message-container">${messageHTML}<br>Score: ${score}/${maxScore}<br></div>`)
-        : '';
 }
 
 function newRound() {
