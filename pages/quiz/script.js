@@ -28,6 +28,19 @@ startBtn.addEventListener('click', () => {
 checkBtn.addEventListener('click', check);
 nextBtn.addEventListener('click', newRound);
 refreshBtn.addEventListener('click', () => document.location.reload());
+document.addEventListener('keydown', (event) => {
+    const name = event.key;
+    console.log('Key pressed:', name);
+    switch (name) {
+        case 'Enter':
+            if (!checkBtn.classList.contains('hide')) {
+                checkBtn instanceof HTMLElement ? checkBtn.click() : '';
+            }
+            else if (!checkBtn.classList.contains('hide')) {
+                nextBtn instanceof HTMLElement ? nextBtn.click() : '';
+            }
+    }
+});
 function start() {
     currentRound++;
     console.log(`Current round => ${currentRound}`);

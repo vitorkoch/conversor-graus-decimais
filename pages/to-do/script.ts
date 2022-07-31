@@ -6,7 +6,13 @@ const list = document.querySelector('[todo-list]');
 // Event Listeners
 addButton.addEventListener('click', addTodo);
 list.addEventListener('click', deleteCheck);
-
+document.addEventListener('keyup', (event) => {
+    const name = event.key;
+    switch(name){
+        case 'Enter':
+            addButton instanceof HTMLElement ? addButton.click() : '';
+    }
+})
 //Functions
 function addTodo() {
     let inputValue = input instanceof HTMLInputElement ? input.value : '';

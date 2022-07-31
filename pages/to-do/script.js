@@ -3,6 +3,13 @@ const addButton = document.querySelector('[todo-btn]');
 const list = document.querySelector('[todo-list]');
 addButton.addEventListener('click', addTodo);
 list.addEventListener('click', deleteCheck);
+document.addEventListener('keyup', (event) => {
+    const name = event.key;
+    switch (name) {
+        case 'Enter':
+            addButton instanceof HTMLElement ? addButton.click() : '';
+    }
+});
 function addTodo() {
     let inputValue = input instanceof HTMLInputElement ? input.value : '';
     if (inputValue != '') {
