@@ -38,10 +38,10 @@ body {
 
 input,
 button {
-    margin: 0.3rem;
-    border-radius: 0.3rem;
-    padding: 0.2rem;
-    font-size: 0.9rem;
+    margin: 5px;
+    border-radius: 10px;
+    padding: 4px;
+    font-size: 14px;
 }
 
 button {
@@ -68,4 +68,39 @@ iframe {
     width: 400px;
     max-width: 80%;
     height: 200px;
+}
+
+#config-menu-bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#config-menu {
+    background-color: #16833a;
+    background-image: linear-gradient(315deg, #16833a, #0183a7);
+    padding: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+}
+
+#close-btn {
+    color: red;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+#confirm-btn {
+    color: green;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
 }
