@@ -1,48 +1,48 @@
 // TODO: Usar JSON para pegar as respostas
 // Selectors
-const startBtn = document.querySelector('[start-btn]');
-const questionary = document.querySelector('[questionary]');
-const checkBtn = document.querySelector('[check-btn]');
-const nextBtn = document.querySelector('[next-btn]');
-const refreshBtn = document.querySelector('[refresh-btn]');
-const message = document.querySelector('[message]');
-const container = document.querySelector('[container]');
-const quesTitle = document.querySelector('[ques-title]');
-const answerA = document.querySelector('[a]');
-const textA = document.querySelector('[a-txt]');
-const answerB = document.querySelector('[b]');
-const textB = document.querySelector('[b-txt]');
-const answerC = document.querySelector('[c]');
-const textC = document.querySelector('[c-txt]');
-const answerD = document.querySelector('[d]');
-const textD = document.querySelector('[d-txt]');
+const startBtn = document.querySelector("[start-btn]");
+const questionary = document.querySelector("[questionary]");
+const checkBtn = document.querySelector("[check-btn]");
+const nextBtn = document.querySelector("[next-btn]");
+const refreshBtn = document.querySelector("[refresh-btn]");
+const message = document.querySelector("[message]");
+const container = document.querySelector("[container]");
+const quesTitle = document.querySelector("[ques-title]");
+const answerA = document.querySelector("[a]");
+const textA = document.querySelector("[a-txt]");
+const answerB = document.querySelector("[b]");
+const textB = document.querySelector("[b-txt]");
+const answerC = document.querySelector("[c]");
+const textC = document.querySelector("[c-txt]");
+const answerD = document.querySelector("[d]");
+const textD = document.querySelector("[d-txt]");
 
 // Global Variables
 const maxScore = 50;
 const totalRounds = 5;
 let score = 0;
 let currentRound = 0;
-let answerChecked = '';
-let correctAnswer = '';
+let answerChecked = "";
+let correctAnswer = "";
 let queNum = 0;
 
 // Event Listeners
-startBtn.addEventListener('click', () => {
-    startBtn.classList.add('hide');
+startBtn.addEventListener("click", () => {
+    startBtn.classList.add("hide");
     start();
 });
-checkBtn.addEventListener('click', check);
-nextBtn.addEventListener('click', newRound);
-refreshBtn.addEventListener('click', () => document.location.reload());
-document.addEventListener('keydown', (event) => {
+checkBtn.addEventListener("click", check);
+nextBtn.addEventListener("click", newRound);
+refreshBtn.addEventListener("click", () => document.location.reload());
+document.addEventListener("keydown", (event) => {
     const name = event.key;
-    console.log('Key pressed:', name);
+    console.log("Key pressed:", name);
     switch (name) {
-        case 'Enter':
-            if (!checkBtn.classList.contains('hide')) {
-                checkBtn instanceof HTMLElement ? checkBtn.click() : '';
-            } else if(!checkBtn.classList.contains('hide')) {
-                nextBtn instanceof HTMLElement ? nextBtn.click() : '';
+        case "Enter":
+            if (!checkBtn.classList.contains("hide")) {
+                checkBtn instanceof HTMLElement ? checkBtn.click() : "";
+            } else if (!checkBtn.classList.contains("hide")) {
+                nextBtn instanceof HTMLElement ? nextBtn.click() : "";
             }
     }
 });
@@ -50,9 +50,9 @@ document.addEventListener('keydown', (event) => {
 function start() {
     currentRound++;
     console.log(`Current round => ${currentRound}`);
-    console.log('Started');
-    questionary.classList.remove('hide');
-    checkBtn.classList.remove('hide');
+    console.log("Started");
+    questionary.classList.remove("hide");
+    checkBtn.classList.remove("hide");
 
     renderQue();
 }
@@ -60,30 +60,30 @@ function start() {
 function check() {
     if (
         !(
-            (answerA instanceof HTMLInputElement ? answerA.checked : '') ===
+            (answerA instanceof HTMLInputElement ? answerA.checked : "") ===
                 false &&
-            (answerB instanceof HTMLInputElement ? answerB.checked : '') ===
+            (answerB instanceof HTMLInputElement ? answerB.checked : "") ===
                 false &&
-            (answerC instanceof HTMLInputElement ? answerC.checked : '') ===
+            (answerC instanceof HTMLInputElement ? answerC.checked : "") ===
                 false &&
-            (answerD instanceof HTMLInputElement ? answerD.checked : '') ===
+            (answerD instanceof HTMLInputElement ? answerD.checked : "") ===
                 false
         )
     ) {
-        playSound('../../media/notification.mp3', 0.1);
+        playSound("../../media/notification.mp3", 0.1);
         toggleRadio(true);
-        if (answerA instanceof HTMLInputElement ? answerA.checked : '') {
+        if (answerA instanceof HTMLInputElement ? answerA.checked : "") {
             answerChecked = questions[queNum].answers[0];
-        } else if (answerB instanceof HTMLInputElement ? answerB.checked : '') {
+        } else if (answerB instanceof HTMLInputElement ? answerB.checked : "") {
             answerChecked = questions[queNum].answers[1];
-        } else if (answerC instanceof HTMLInputElement ? answerC.checked : '') {
+        } else if (answerC instanceof HTMLInputElement ? answerC.checked : "") {
             answerChecked = questions[queNum].answers[2];
-        } else if (answerD instanceof HTMLInputElement ? answerD.checked : '') {
+        } else if (answerD instanceof HTMLInputElement ? answerD.checked : "") {
             answerChecked = questions[queNum].answers[3];
         }
         backgroundChange();
         console.log(`Answer '${answerChecked}' checked`);
-        let messageHTML = '';
+        let messageHTML = "";
         if (correct()) {
             score += 10;
             messageHTML =
@@ -92,12 +92,12 @@ function check() {
             messageHTML =
                 '<span id="wrong-message"><i class="fa-solid fa-circle-xmark"></i> Wrong Answer</span>';
         }
-        nextBtn.classList.remove('hide');
-        message.classList.remove('hide');
-        checkBtn.classList.add('hide');
+        nextBtn.classList.remove("hide");
+        message.classList.remove("hide");
+        checkBtn.classList.add("hide");
         message instanceof HTMLElement
             ? (message.innerHTML = `<div id="message-container">${messageHTML}<br>Score: ${score}/${maxScore}<br></div>`)
-            : '';
+            : "";
     }
 }
 
@@ -105,42 +105,42 @@ function newRound() {
     queNum++;
     backgroundRemove();
     toggleRadio(false);
-    let finalMessage = '';
+    let finalMessage = "";
     currentRound++;
-    console.log('New question');
+    console.log("New question");
     console.log(`Current round => ${currentRound}`);
-    nextBtn.classList.add('hide');
-    message.classList.add('hide');
+    nextBtn.classList.add("hide");
+    message.classList.add("hide");
     deselectAnswer();
     if (currentRound <= totalRounds) {
-        checkBtn.classList.remove('hide');
+        checkBtn.classList.remove("hide");
         renderQue();
     } else {
-        console.log('Finished');
+        console.log("Finished");
         if (score === maxScore) {
-            finalMessage = 'Perfect! 😎';
-            playSound('../../media/crowd-yeah.mp3', 0.8);
+            finalMessage = "Perfect! 😎";
+            playSound("../../media/crowd-yeah.mp3", 0.8);
         } else if (score > maxScore / 2) {
-            finalMessage = 'Almost there 😕...';
-            playSound('../../media/sad.mp3');
+            finalMessage = "Almost there 😕...";
+            playSound("../../media/sad.mp3");
         } else {
-            finalMessage = '❌ Good luck in the next time';
-            playSound('../../media/fail-trumpet.mp3', 0.8);
+            finalMessage = "❌ Good luck in the next time";
+            playSound("../../media/fail-trumpet.mp3", 0.8);
         }
         const finalContainer = `<h3>Congratulations!</h3><div>Your score was ${score}/${maxScore}<br/>${finalMessage}</div>`;
         container instanceof HTMLElement
             ? (container.innerHTML = finalContainer)
-            : '';
-        refreshBtn.classList.remove('hide');
+            : "";
+        refreshBtn.classList.remove("hide");
     }
 }
 
 function correct() {
     if (answerChecked === questions[queNum].correct) {
-        console.log('Correct answer');
+        console.log("Correct answer");
         return true;
     } else {
-        console.log('Wrong answer');
+        console.log("Wrong answer");
         return false;
     }
 }
@@ -155,39 +155,39 @@ function renderQue() {
 }
 
 function deselectAnswer() {
-    answerA instanceof HTMLInputElement ? (answerA.checked = false) : '';
-    answerB instanceof HTMLInputElement ? (answerB.checked = false) : '';
-    answerC instanceof HTMLInputElement ? (answerC.checked = false) : '';
-    answerD instanceof HTMLInputElement ? (answerD.checked = false) : '';
+    answerA instanceof HTMLInputElement ? (answerA.checked = false) : "";
+    answerB instanceof HTMLInputElement ? (answerB.checked = false) : "";
+    answerC instanceof HTMLInputElement ? (answerC.checked = false) : "";
+    answerD instanceof HTMLInputElement ? (answerD.checked = false) : "";
 }
 
 function toggleRadio(disabled) {
-    answerA instanceof HTMLInputElement ? (answerA.disabled = disabled) : '';
-    answerB instanceof HTMLInputElement ? (answerB.disabled = disabled) : '';
-    answerC instanceof HTMLInputElement ? (answerC.disabled = disabled) : '';
-    answerD instanceof HTMLInputElement ? (answerD.disabled = disabled) : '';
+    answerA instanceof HTMLInputElement ? (answerA.disabled = disabled) : "";
+    answerB instanceof HTMLInputElement ? (answerB.disabled = disabled) : "";
+    answerC instanceof HTMLInputElement ? (answerC.disabled = disabled) : "";
+    answerD instanceof HTMLInputElement ? (answerD.disabled = disabled) : "";
 }
 
 function backgroundChange() {
     if (questions[queNum].correct === questions[queNum].answers[0]) {
-        textA.classList.add('correct');
+        textA.classList.add("correct");
     }
     if (questions[queNum].correct === questions[queNum].answers[1]) {
-        textB.classList.add('correct');
+        textB.classList.add("correct");
     }
     if (questions[queNum].correct === questions[queNum].answers[2]) {
-        textC.classList.add('correct');
+        textC.classList.add("correct");
     }
     if (questions[queNum].correct === questions[queNum].answers[3]) {
-        textD.classList.add('correct');
+        textD.classList.add("correct");
     }
 }
 
 function backgroundRemove() {
-    textA.classList.remove('correct');
-    textB.classList.remove('correct');
-    textC.classList.remove('correct');
-    textD.classList.remove('correct');
+    textA.classList.remove("correct");
+    textB.classList.remove("correct");
+    textC.classList.remove("correct");
+    textD.classList.remove("correct");
 }
 
 function playSound(url, volume = 1) {
@@ -198,28 +198,28 @@ function playSound(url, volume = 1) {
 
 const questions = [
     {
-        question: 'Which is the height of the tallest person in the world?',
-        answers: ['3m', '2.5m', '2m', '3.5m'],
-        correct: '2.5m',
+        question: "Which is the height of the tallest person in the world?",
+        answers: ["3m", "2.5m", "2m", "3.5m"],
+        correct: "2.5m",
     },
     {
-        question: 'Which is the length of the human intestines?',
-        answers: ['7.5m', '2m', '10.2m', '5m'],
-        correct: '7.5m',
+        question: "Which is the length of the human intestines?",
+        answers: ["7.5m", "2m", "10.2m", "5m"],
+        correct: "7.5m",
     },
     {
-        question: 'Which is the national flower of Japan',
-        answers: ['Begonia', 'Sakura', 'Chrysanthemums', 'Hydrangea'],
-        correct: 'Chrysanthemums',
+        question: "Which is the national flower of Japan",
+        answers: ["Begonia", "Sakura", "Chrysanthemums", "Hydrangea"],
+        correct: "Chrysanthemums",
     },
     {
-        question: 'In which year did man walk on the moon?',
-        answers: ['1970', '1969', '1958', '1980'],
-        correct: '1969',
+        question: "In which year did man walk on the moon?",
+        answers: ["1970", "1969", "1958", "1980"],
+        correct: "1969",
     },
     {
-        question: 'How many countries are there in the world?',
-        answers: ['208', '175', '182', '195'],
-        correct: '195',
+        question: "How many countries are there in the world?",
+        answers: ["208", "175", "182", "195"],
+        correct: "195",
     },
 ];
