@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 * {
     font-family: Poppins, sans-serif;
@@ -44,11 +44,11 @@ a:visited {
     background-color: rgba(255, 255, 255, 1);
     opacity: 0.8;
     text-align: center;
+    transition: 250ms;
 }
 
 #menu:hover {
     opacity: 1;
-    transition: 250ms;
 }
 
 .hide {
