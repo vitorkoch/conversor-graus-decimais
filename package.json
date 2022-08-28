@@ -1,0 +1,25 @@
+{
+  "name": "my-sites",
+  "version": "1.0.0",
+  "description": "My sandbox for web development ### [Homepage](https://my-sites-theta.vercel.app)",
+  "main": "main.ts",
+  "devDependencies": {
+    "@types/node": "^18.7.13",
+    "electron": "^20.1.0",
+    "electron-packager": "^16.0.0",
+    "typescript": "^4.8.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitorkoch/my-sites.git"
+  },
+  "author": "Vitor Koch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vitorkoch/my-sites/issues"
+  },
+  "homepage": "https://github.com/vitorkoch/my-sites#readme"
+}
