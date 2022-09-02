@@ -1,12 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
-
-@font-face {
-    font-family: "Cascadia-Code";
-    src: url(fonts/CascadiaCode.woff2);
-}
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap');
 
 * {
-    font-family: "Cascadia-Code", "Arvo", "sans-serif";
+    font-family: "Merriweather Sans", "sans-serif";
     margin: 0;
     padding: 0;
     border: none;

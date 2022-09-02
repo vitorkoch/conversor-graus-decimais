@@ -13,7 +13,7 @@ app.on("ready", () => {
     mainWindow.once("ready-to-show", () => mainWindow.show())
 
     mainWindow.setTitle("My sites");
-    mainWindow.loadURL("https://my-sites-theta.vercel.app/")
+    mainWindow.loadURL("https://my-sites-vitorkoch.vercel.app/")
 
     mainWindow.on("closed", () => {
         mainWindow = null;
