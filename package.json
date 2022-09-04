@@ -16,13 +16,13 @@
     "url": "https://github.com/vitorkoch/my-sites/issues"
   },
   "homepage": "https://github.com/vitorkoch/my-sites#readme",
-  "dependencies": {
+  "overrides": {
+    "got": "^12.1.0"
+  },
+  "devDependencies": {
     "@types/node": "^18.7.14",
     "electron": "^20.1.1",
     "electron-packager": "^16.0.0",
     "typescript": "^4.8.2"
-  },
-  "overrides": {
-    "got": "^12.1.0"
   }
 }
