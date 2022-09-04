@@ -3,12 +3,6 @@
   "version": "1.0.0",
   "description": "My sandbox for web development ### [Homepage](https://my-sites-theta.vercel.app)",
   "main": "main.ts",
-  "devDependencies": {
-    "@types/node": "^18.7.13",
-    "electron": "^20.1.1",
-    "electron-packager": "^16.0.0",
-    "typescript": "^4.8.2"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/vitorkoch/my-sites/issues"
   },
-  "homepage": "https://github.com/vitorkoch/my-sites#readme"
+  "homepage": "https://github.com/vitorkoch/my-sites#readme",
+  "dependencies": {
+    "@types/node": "^18.7.14",
+    "electron": "^20.1.1",
+    "electron-packager": "^16.0.0",
+    "typescript": "^4.8.2"
+  },
+  "overrides": {
+    "got": "^12.1.0"
+  }
 }
